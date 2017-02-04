@@ -28,12 +28,10 @@ License: A "Slug" license name e.g. GPL2
 require_once plugin_dir_path(__FILE__) . '/config-path.php';
 require_once MIFISTSLICK_PlUGIN_DIR . '/includes/common/class_mifist_slick_autoload.php';
 require_once MIFISTSLICK_PlUGIN_DIR . '/includes/calss_mifist_slick_plugin.php';
-require_once MIFISTSLICK_PlUGIN_DIR . '/includes/shortcodes.php';
+
 
 // вызов функций активации и деактивации плагина
 register_activation_hook( __FILE__, array('includes\MifistSlickPlugin' ,  'activation' ) );
 register_deactivation_hook( __FILE__, array('includes\MifistSlickPlugin' ,  'deactivation' ) );
 
 
-add_shortcode( 'mifshortcode', array( 'includes\MifistShortcode', 'shortcode_code' ) );
-add_shortcode( 'mifdescription', array( 'includes\MifistShortcode', 'description_code' ) );

@@ -7,8 +7,9 @@ class MifistSlickPlugin
 {
     private static $instance = null;
     private function __construct() {
-    	
-
+    	if (!is_admin()) {
+           new MifistShortcode();
+        }
     }
     public static function get_instance() {
 

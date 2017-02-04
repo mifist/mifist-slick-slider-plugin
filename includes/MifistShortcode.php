@@ -27,19 +27,13 @@ foobar_shortcode::init();*/
 class MifistShortcode {
 	private static $instance = null;
 	public function __construct() {
-		if (function_exists ('add_shortcode') ) {
+		
 			add_shortcode( 'mifshortcode', array( $this, 'shortcode_code' ) );
 			add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
-		}
+		
 		
 	}
-	public static function get_instance() {
-		
-		if ( null == self::$instance ) {
-			self::$instance = new self;
-		}
-		return self::$instance;
-	}
+
 	//вывод кода на страницу
 	static public function shortcode_code ($atts, $content) {
 		// инициализация глобальных переменных для mif_slide, при необходимости
@@ -90,7 +84,7 @@ class MifistShortcode {
 		return true;
 	}
 }
-MifistShortcode::get_instance();
+
 
 
 
