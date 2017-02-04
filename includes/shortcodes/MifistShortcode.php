@@ -5,11 +5,8 @@ namespace includes\shortcodes;
 class MifistShortcode {
 	private static $instance = null;
 	public function __construct() {
-		
-			add_shortcode( 'mifshortcode', array( $this, 'shortcode_code' ) );
-			add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
-		
-		
+		add_shortcode( 'mifshortcode', array( $this, 'shortcode_code' ) );
+		add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
 	}
 	public static function getInstance(){
 		if ( null == self::$instance ) {
@@ -19,7 +16,7 @@ class MifistShortcode {
 	}
 
 	//вывод кода на страницу
-	static public function shortcode_code ($atts, $content) {
+	static public function shortcode_code ($atts, $content = "") {
 		// инициализация глобальных переменных для mif_slide, при необходимости
 		$GLOBALS['shortcode-count'] = 0;
 		$GLOBALS['mif_sh-lines'] = array();
@@ -40,7 +37,7 @@ class MifistShortcode {
 		return $output;
 	}
 	//получение данных
-	static public function description_code ($atts, $content = null) {
+	static public function description_code ($atts, $content = "") {
 		// получаем параметры шорткода
 		extract(shortcode_atts(array(
 			'title'     => '',          // shortcode title name
