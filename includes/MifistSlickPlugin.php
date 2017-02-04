@@ -3,14 +3,14 @@
 
 
 namespace includes;
-use includes\common\StepByStepLoader;
+use includes\common\MifistLoader;
 
 class MifistSlickPlugin
 {
     private static $instance = null;
     private function __construct() {
     	
-        StepByStepLoader::getInstance();
+        MifistLoader::getInstance();
     }
     public static function getInstance() {
 

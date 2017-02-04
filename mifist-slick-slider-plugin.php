@@ -5,7 +5,7 @@ Plugin Name: Mifist Slick Slider
 Plugin URI:  http://www.daria-moskalets.in.ua/mifist-slick-slider/
 Description: Free Slick slider plugin for WordPress.
 Version: 1.0
-Author: moskalets_daria
+Author: Moskalets Daria
 Author URI: http://www.daria-moskalets.in.ua/
 Text Domain: mifist-slick-slider-plugin
 Domain Path: /lang/
