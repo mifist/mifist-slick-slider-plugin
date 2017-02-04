@@ -11,6 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 Free Slick slider plugin for WordPress.
 Official page of slick slider: http://kenwheeler.github.io/slick/
+Have fun!
 
 == Installation ==
 
