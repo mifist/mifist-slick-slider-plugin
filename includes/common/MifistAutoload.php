@@ -1,6 +1,6 @@
 <?php //	Автоматическая загрузка классов
 namespace includes\common;
-class MifistSlickAutoload
+class MifistAutoload
 {
     private static $instance = null;
     private function __construct() {
@@ -26,4 +26,4 @@ class MifistSlickAutoload
         }
     }
 }
-MifistSlickAutoload::getInstance();
+MifistAutoload::getInstance();

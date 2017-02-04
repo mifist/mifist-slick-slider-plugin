@@ -1,37 +1,23 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: romansolomashenko
- * Date: 25.01.17
- * Time: 8:39 PM
- */
-
+<?php // Файл сборки плагина
 namespace includes\common;
 
+// Пути namespace к классам
+use includes\shortcodes\MifistShortcode;
 
-use includes\MifistShortcode;
-
-class StepByStepLoader
+class MifistLoader
 {
     private static $instance = null;
-
     private function __construct(){
         // is_admin() Условный тег. Срабатывает когда показывается админ панель сайта (консоль или любая
         // другая страница админки).
         // Проверяем в админке мы или нет
         if ( is_admin() ) {
-            // Когда в админке вызываем метод admin()
-            $this->admin();
-           
+            $this->admin(); // Когда в админке вызываем метод admin()
         } else {
-            // Когда на сайте вызываем метод site()
-            $this->site();
+            $this->site(); // Когда на сайте вызываем метод site()
         }
         $this->all();
-
-
     }
-
     public static function getInstance(){
         if ( null == self::$instance ) {
             self::$instance = new self;
@@ -58,13 +44,7 @@ class StepByStepLoader
      * Метод будет срабатывать везде. Загрузка классов для Админ панеле и Сайта
      */
     public function all(){
-        StepByStepLocalization::getInstance();
-        //$stepByStepExampleAction = StepByStepExampleAction::newInstance();
-        /*$stepByStepExampleFilter = StepByStepExampleFilter::newInstance();
-       $stepByStepExampleFilter->callMyFilter("Roman");
-       $stepByStepExampleFilter->callMyFilterAdditionalParameter("Roman", "Softgroup", "Poltava");
-       $stepByStepExampleAction = StepByStepExampleAction::newInstance();
-       $stepByStepExampleAction->callMyAction();
-       $stepByStepExampleAction->callMyActionAdditionalParameter( 'test1', 'test2', 'test3' );*/
+	    MifistLocalization::getInstance();
+       
     }
 }
