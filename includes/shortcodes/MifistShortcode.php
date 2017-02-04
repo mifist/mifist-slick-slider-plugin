@@ -1,7 +1,7 @@
 <?php
 namespace includes;
 // пример подключения скриптов шорткода, только если он есть на странице
-/*class foobar_shortcode {
+class foobar_shortcode {
   static $add_script;
   static function init () {
       add_shortcode('foobar', array(__CLASS__, 'foobar_func'));
@@ -21,7 +21,7 @@ namespace includes;
       wp_print_scripts('foo-js');
   }
 }
-foobar_shortcode::init();*/
+foobar_shortcode::init();
 
 // создание шоткода
 class MifistShortcode {
@@ -32,6 +32,12 @@ class MifistShortcode {
 			add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
 		
 		
+	}
+	public static function getInstance(){
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
+		return self::$instance;
 	}
 
 	//вывод кода на страницу

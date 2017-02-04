@@ -2,16 +2,16 @@
 
 
 namespace includes;
+use includes\common\StepByStepLoader;
 
 class MifistSlickPlugin
 {
     private static $instance = null;
     private function __construct() {
-    	if (!is_admin()) {
-           new MifistShortcode();
-        }
+    	
+        StepByStepLoader::getInstance();
     }
-    public static function get_instance() {
+    public static function getInstance() {
 
         if ( null == self::$instance ) {
             self::$instance = new self;
@@ -35,4 +35,4 @@ class MifistSlickPlugin
 
 }
 
-MifistSlickPlugin::get_instance();
+MifistSlickPlugin::getInstance();

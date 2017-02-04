@@ -7,6 +7,8 @@ Description: Free Slick slider plugin for WordPress.
 Version: 1.0
 Author: moskalets_daria
 Author URI: http://www.daria-moskalets.in.ua/
+Text Domain: mifist-slick-slider-plugin
+Domain Path: /lang/
 License: A "Slug" license name e.g. GPL2
     Copyright 2017  Moskalets Daria  (email: daria1992moskalets@gmail.com)
 

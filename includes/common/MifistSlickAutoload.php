@@ -7,7 +7,7 @@ class MifistSlickAutoload
         spl_autoload_register(array($this, 'autoload_namespace'));
     }
 
-    public static function get_instance(){
+    public static function getInstance(){
         if ( null == self::$instance ) {
             self::$instance = new self;
         }
@@ -26,4 +26,4 @@ class MifistSlickAutoload
         }
     }
 }
-MifistSlickAutoload::get_instance();
+MifistSlickAutoload::getInstance();
