@@ -3,6 +3,8 @@ namespace includes\common;
 
 // Пути namespace к классам
 use includes\shortcodes\MifistShortcode;
+use includes\example\MifistExampleAction;
+use includes\example\MifistExampleFilter;
 
 class MifistLoader
 {
@@ -45,6 +47,12 @@ class MifistLoader
      */
     public function all(){
 	    MifistLocalization::getInstance();
-       
+	    MifistExampleAction::newInstance();
+//	    $mifistExampleFilter = MifistExampleFilter::newInstance();
+//		$mifistExampleFilter->callMyFilter("Roman");
+//		$mifistExampleFilter->callMyFilterAdditionalParameter("Roman", "Softgroup", "Poltava");
+//		$mifistExampleAction = MifistExampleAction::newInstance();
+//		$mifistExampleAction->callMyAction();
+//		$mifistExampleAction->callMyActionAdditionalParameter( 'test1', 'test2', 'test3' );
     }
 }
