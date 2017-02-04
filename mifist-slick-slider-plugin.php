@@ -26,8 +26,8 @@ License: A "Slug" license name e.g. GPL2
 */
 // подключение основных файлов плагина
 require_once plugin_dir_path(__FILE__) . '/config-path.php';
-require_once MIFISTSLICK_PlUGIN_DIR . '/includes/common/class_mifist_slick_autoload.php';
-require_once MIFISTSLICK_PlUGIN_DIR . '/includes/calss_mifist_slick_plugin.php';
+require_once MIFISTSLICK_PlUGIN_DIR . '/includes/common/MifistSlickAutoload.php';
+require_once MIFISTSLICK_PlUGIN_DIR . '/includes/MifistSlickPlugin.php';
 
 
 // вызов функций активации и деактивации плагина
