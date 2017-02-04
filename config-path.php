@@ -21,5 +21,5 @@ $plugin_data = get_plugin_data(MIFISTSLICK_PlUGIN_DIR.'/'.basename(MIFISTSLICK_P
 
 define("MIFISTSLICK_PlUGIN_VERSION", $plugin_data['Version']);
 define("MIFISTSLICK_PlUGIN_NAME", $plugin_data['Name']);
-
-define("MIFISTSLICK_PlUGIN_DIR_LOCALIZATION", plugin_basename(STEPBYSTEP_PlUGIN_DIR.'/lang/'));
+// путь к файлам переводам
+define("MIFISTSLICK_PlUGIN_DIR_LOCALIZATION", plugin_basename(MIFISTSLICK_PlUGIN_DIR.'/lang/'));
