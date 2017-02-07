@@ -2,9 +2,10 @@
 
 namespace includes\example;
 
+use includes\common\NewInstance;
 
-class MifistExampleAction
-{
+class MifistExampleAction {
+	use NewInstance;
     public function __construct() {
         //Прикрепим функцию к событию 'my_action'
 //        add_action('my_action', array(&$this, 'myActionFunction'));
@@ -23,10 +24,7 @@ class MifistExampleAction
         add_action('plugins_loaded', function(){ error_log(__('Hello', MIFISTSLICK_PlUGIN_TEXTDOMAIN)); }, 100);
 
     }
-    public static function newInstance(){
-        $instance = new self;
-        return $instance;
-    }
+	
 
     /**
      * Функция события my_action

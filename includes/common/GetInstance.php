@@ -9,8 +9,8 @@
 namespace includes\common;
 
 
-trait Singleton {
-	static private $instance;
+trait GetInstance {
+	private static $instance = null;
 	
 	private function __construct() { /* ... @return Singleton */ }  // Защищаем от создания через new Singleton
 	private function __clone() { /* ... @return Singleton */ }  // Защищаем от создания через клонирование
