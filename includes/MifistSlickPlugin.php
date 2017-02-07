@@ -4,21 +4,16 @@
 
 namespace includes;
 use includes\common\MifistLoader;
+use includes\common\GetInstance;
 
-class MifistSlickPlugin
-{
-    private static $instance = null;
+
+class MifistSlickPlugin {
+	use GetInstance;
     private function __construct() {
     	
         MifistLoader::getInstance();
     }
-    public static function getInstance() {
-
-        if ( null == self::$instance ) {
-            self::$instance = new self;
-        }
-        return self::$instance;
-    }
+ 
 
     static public function activation()
     {

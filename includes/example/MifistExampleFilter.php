@@ -2,8 +2,10 @@
 
 namespace includes\example;
 
-class MifistExampleFilter
-{
+use includes\common\NewInstance;
+
+class MifistExampleFilter {
+	use NewInstance;
     public function __construct() {
         //Прикрепляем функцию к фильтру
 //        add_filter('my_filter', array(&$this, 'myFiterFunction'));
@@ -16,10 +18,7 @@ class MifistExampleFilter
 		    }
 	    });
     }
-    public static function newInstance(){
-        $instance = new self;
-        return $instance;
-    }
+   
 
     /**
      * Функция которую вызовет фильтер

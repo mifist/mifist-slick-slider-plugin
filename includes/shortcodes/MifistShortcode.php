@@ -1,21 +1,17 @@
 <?php
 namespace includes\shortcodes;
+use includes\common\GetInstance;
 
 // создание шоткода
 class MifistShortcode {
-	private static $instance = null;
+	use GetInstance;
 	static $loaded;
 	public function __construct() {
 		add_shortcode( 'mifshortcode', array( $this, 'shortcode_code' ) );
 		add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
 		add_action('wp_footer', array($this, 'enqueueScriptsStyle'));
 	}
-	public static function getInstance(){
-		if ( null == self::$instance ) {
-			self::$instance = new self;
-		}
-		return self::$instance;
-	}
+
 	// проверка и вывод скрипта для шорткода
 	function enqueueScriptsStyle() {
 		$pluginPrefix = "mifist-";
