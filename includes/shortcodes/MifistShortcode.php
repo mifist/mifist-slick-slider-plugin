@@ -4,9 +4,11 @@ namespace includes\shortcodes;
 // создание шоткода
 class MifistShortcode {
 	private static $instance = null;
+	static $loaded;
 	public function __construct() {
 		add_shortcode( 'mifshortcode', array( $this, 'shortcode_code' ) );
 		add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
+		add_action('wp_footer', array($this, 'enqueueScriptsStyle'));
 	}
 	public static function getInstance(){
 		if ( null == self::$instance ) {
@@ -14,7 +16,12 @@ class MifistShortcode {
 		}
 		return self::$instance;
 	}
-
+	// проверка и вывод скрипта для шорткода
+	function enqueueScriptsStyle() {
+		$pluginPrefix = "mifist-";
+		wp_enqueue_style( "{$pluginPrefix}main-css", MIFISTSLICK_PlUGIN_URL . 'assets/css/mssp-style.css' );
+		wp_enqueue_script( "{$pluginPrefix}main-js", MIFISTSLICK_PlUGIN_URL . 'assets/js/slick.min.js' );
+	}
 	//вывод кода на страницу
 	static public function shortcode_code ($atts, $content = "") {
 		// инициализация глобальных переменных для mif_slide, при необходимости
@@ -64,8 +71,8 @@ class MifistShortcode {
 		// ничего не выводим
 		return true;
 	}
+	
 }
-
 
 
 
