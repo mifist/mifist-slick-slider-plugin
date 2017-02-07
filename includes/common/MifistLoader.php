@@ -5,10 +5,9 @@ namespace includes\common;
 use includes\shortcodes\MifistShortcode;
 use includes\example\MifistExampleAction;
 use includes\example\MifistExampleFilter;
-
 class MifistLoader {
-	use Singleton;
-	//private static $instance = null;
+	use GetInstance;
+	
 	// инициализируем новый класс как объект
     private function __construct(){
         // is_admin() Условный тег. Срабатывает когда показывается админ панель сайта (консоль или любая
@@ -21,13 +20,6 @@ class MifistLoader {
         }
         $this->all();
     }
-
-	/*public static function getInstance(){
-		if ( null == self::$instance ) {
-			self::$instance = new self;
-		}
-		return self::$instance;
-	}*/
 	
     /**
      * Метод будет срабатывать когда вы находитесь в Админ панеле. Загрузка классов для Админ панели
