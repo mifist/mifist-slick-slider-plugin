@@ -6,8 +6,15 @@ class MifistExampleFilter
 {
     public function __construct() {
         //Прикрепляем функцию к фильтру
-        add_filter('my_filter', array(&$this, 'myFiterFunction'));
-        add_filter('my_filter', array(&$this, 'myFiterFunctionAdditionalParameter'), 10 , 3); // 3 - кол. параметров
+//        add_filter('my_filter', array(&$this, 'myFiterFunction'));
+ //       add_filter('my_filter', array(&$this, 'myFiterFunctionAdditionalParameter'), 10 , 3); // 3 - кол. параметров
+	    add_filter( 'the_content', function($content) {
+		    if ( has_shortcode($content, "hello-shortcode") )
+		    {
+			    $pluginPrefix = "mifist-";
+			    wp_enqueue_script( "{$pluginPrefix}main-js", MIFISTSLICK_PlUGIN_URL . 'assets/js/slick.js' );
+		    }
+	    });
     }
     public static function newInstance(){
         $instance = new self;
