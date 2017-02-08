@@ -42,7 +42,15 @@ class MifistLoaderScript {
 		wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-admin-js');
 		
 	}
+	
+	
 	public function loadHeadScriptAdmin(){
+		?>
+		<script type="text/javascript">
+			var mifistSlickAjaxUrl;
+			mifistSlickAjaxUrl  = '<?php echo MIFISTSLICK_PlUGIN_AJAX_URL; ?>';
+		</script>
+		<?php
 	// STYLE
 		wp_register_style(
 			MIFISTSLICK_PlUGIN_SLUG.'-admin', //$handle
