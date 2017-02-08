@@ -9,14 +9,15 @@ class MifistShortcode {
 	public function __construct() {
 		add_shortcode( 'mifshortcode', array( $this, 'shortcode_code' ) );
 		add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
-		add_action('wp_footer', array($this, 'enqueueScriptsStyle'));
+		
 	}
 
 	// проверка и вывод скрипта для шорткода
 	function enqueueScriptsStyle() {
 		$pluginPrefix = "mifist-";
-		wp_enqueue_style( "{$pluginPrefix}main-css", MIFISTSLICK_PlUGIN_URL . 'assets/css/mssp-style.css' );
-		wp_enqueue_script( "{$pluginPrefix}main-js", MIFISTSLICK_PlUGIN_URL . 'assets/js/slick.min.js' );
+		wp_enqueue_style( "{$pluginPrefix}-css", MIFISTSLICK_PlUGIN_URL . 'assets/core/css/mssp-style.css' );
+		wp_enqueue_script( "{$pluginPrefix}-js", MIFISTSLICK_PlUGIN_URL . 'assets/core/js/slick.min.js', array('jquery'),
+			null, true);
 	}
 	//вывод кода на страницу
 	static public function shortcode_code ($atts, $content = "") {
