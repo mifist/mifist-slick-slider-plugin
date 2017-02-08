@@ -5,6 +5,7 @@ namespace includes\common;
 use includes\shortcodes\MifistShortcode;
 use includes\example\MifistExampleAction;
 use includes\example\MifistExampleFilter;
+
 class MifistLoader {
 	use GetInstance;
 	
@@ -41,6 +42,7 @@ class MifistLoader {
      */
     public function all(){
 	    MifistLocalization::getInstance();
+	    MifistLoaderScript::getInstance();
 //	    MifistExampleAction::newInstance();
 //	    $mifistExampleFilter = MifistExampleFilter::newInstance();
 //		$mifistExampleFilter->callMyFilter("Roman");
