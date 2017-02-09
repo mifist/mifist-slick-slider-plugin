@@ -32,7 +32,7 @@ class MifistLoaderScript {
 			array(
 				'jquery'
 			), //$deps
-			MIFISTSLICK_PlUGIN_VERSION, //$ver
+			null,//MIFISTSLICK_PlUGIN_VERSION, //$ver
 			true //$$in_footer
 		);
 		/**
@@ -69,7 +69,7 @@ class MifistLoaderScript {
 			array(
 				'jquery'
 			), //$deps
-			MIFISTSLICK_PlUGIN_VERSION, //$ver
+			null,//MIFISTSLICK_PlUGIN_VERSION, //$ver
 			true //$$in_footer
 		);
 		wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-core-js');
@@ -86,6 +86,9 @@ class MifistLoaderScript {
 		
 	}
 	public function loadHeadScriptSite(){
+		
+	}
+	public function loadFooterScriptSite(){
 		// STYLE
 		wp_register_style(
 			MIFISTSLICK_PlUGIN_SLUG.'-core', // handle
@@ -95,8 +98,5 @@ class MifistLoaderScript {
 		//'all' // $media (all|screen|handheld|print)
 		);
 		wp_enqueue_style(MIFISTSLICK_PlUGIN_SLUG.'-core');
-	}
-	public function loadFooterScriptSite(){
-		
 	}
 }
