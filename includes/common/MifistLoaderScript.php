@@ -39,7 +39,7 @@ class MifistLoaderScript {
 		 * Добавляет скрипт, только если он еще не был добавлен и другие скрипты от которых он зависит зарегистрированы.
 		 * Зависимые скрипты добавляются автоматически.
 		 */
-		wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-admin-js');
+		//wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-admin-js');
 		
 	}
 	
@@ -72,7 +72,7 @@ class MifistLoaderScript {
 			MIFISTSLICK_PlUGIN_VERSION, //$ver
 			true //$$in_footer
 		);
-		wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-core-js');
+		//wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-core-js');
 		wp_register_script(
 			MIFISTSLICK_PlUGIN_SLUG.'-slick-js', //$handle
 			MIFISTSLICK_PlUGIN_URL.'assets/core/js/slick.min.js', //$src
@@ -86,6 +86,11 @@ class MifistLoaderScript {
 		
 	}
 	public function loadHeadScriptSite(){
+
+		
+	}
+	public function loadFooterScriptSite(){
+
 		// STYLE
 		wp_register_style(
 			MIFISTSLICK_PlUGIN_SLUG.'-core', // handle
@@ -96,7 +101,5 @@ class MifistLoaderScript {
 		);
 		wp_enqueue_style(MIFISTSLICK_PlUGIN_SLUG.'-core');
 	}
-	public function loadFooterScriptSite(){
-		
-	}
+
 }

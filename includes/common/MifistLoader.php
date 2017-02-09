@@ -3,6 +3,7 @@ namespace includes\common;
 
 // Пути namespace к классам
 use includes\shortcodes\MifistShortcode;
+use includes\controllers\admin\menu\MifistMainAdminMenuController;
 use includes\example\MifistExampleAction;
 use includes\example\MifistExampleFilter;
 
@@ -26,7 +27,7 @@ class MifistLoader {
      * Метод будет срабатывать когда вы находитесь в Админ панеле. Загрузка классов для Админ панели
      */
     public function admin(){
-       
+	    MifistMainAdminMenuController::newInstance();
 
     }
 
