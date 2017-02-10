@@ -1,0 +1,79 @@
+// Shortcode style
+@import "shortcodes";
+#wpbody-content {
+  *, *::before, *::after {
+	box-sizing: inherit;
+  }
+  .row {
+	max-width: 112.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+  }
+  .row::before, .row::after {
+	content: ' ';
+	display: table;
+  }
+  
+  .row::after {
+	clear: both;
+  }
+  .column, .columns {
+	width: 100%;
+	float: left;
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;
+  }
+  @media screen and (min-width: 40em) {
+	.column, .columns {
+	  padding-left: 0.9375rem;
+	  padding-right: 0.9375rem;
+	}
+  }
+  
+  .small-12 {
+	width: 100%;
+	padding: 0;
+  }
+  @media screen and (min-width: 40em) {
+	.medium-12 {
+	  width: 100%;
+	  padding: 0;
+	}
+  }
+  @media screen and (min-width: 64em) {
+	.large-6 {
+	  width: 47%;
+	}
+  }
+  
+ 
+}
+#adminmenu #toplevel_page_mifist-slick-slider-plugin-includes-controllers-admin-page-main-admin-menu {
+  .wp-menu-image {
+	img {
+	  padding: 4px 0 0 !important;
+	  opacity: 1;
+	  max-width: 26px !important;
+	}
+  }
+}
+
+// Main Admin Menu
+.mifist-plugin {
+  h4 {
+	font-size: 2.3rem;
+	line-height: 2.5rem;
+	margin: 0;
+  }
+}
+.mif-admin-title {
+  text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  border-top: 5px solid #000;
+  display: block;
+  border-bottom: 5px solid #000;
+  margin: 25px 45px 25px 25px;
+  text-align: center;
+}

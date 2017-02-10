@@ -40,7 +40,15 @@ class MifistLoaderScript {
 		 * Зависимые скрипты добавляются автоматически.
 		 */
 		//wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-admin-js');
-		
+		// STYLE
+		wp_register_style(
+			MIFISTSLICK_PlUGIN_SLUG.'-admin', //$handle
+			MIFISTSLICK_PlUGIN_URL.'assets/admin/css/mssp-admin-main.css', // $src
+			array(), //$deps,
+			MIFISTSLICK_PlUGIN_VERSION // $ver
+		//'all' // $media (all|screen|handheld|print)
+		);
+		wp_enqueue_style(MIFISTSLICK_PlUGIN_SLUG.'-admin');
 	}
 	
 	
@@ -51,15 +59,7 @@ class MifistLoaderScript {
 			mifistSlickAjaxUrl  = '<?php echo MIFISTSLICK_PlUGIN_AJAX_URL; ?>';
 		</script>
 		<?php
-	// STYLE
-		wp_register_style(
-			MIFISTSLICK_PlUGIN_SLUG.'-admin', //$handle
-			MIFISTSLICK_PlUGIN_URL.'assets/admin/css/mssp-admin-main.css', // $src
-			array(), //$deps,
-			MIFISTSLICK_PlUGIN_VERSION // $ver
-		//'all' // $media (all|screen|handheld|print)
-		);
-		//wp_enqueue_style(MIFISTSLICK_PlUGIN_SLUG.'-admin');
+	
 	}
 	public function loadScriptSite($hook){
 	// SCRIPT
