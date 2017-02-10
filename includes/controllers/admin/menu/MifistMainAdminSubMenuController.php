@@ -1,6 +1,6 @@
 <?php
 namespace includes\controllers\admin\menu;
-
+use includes\common\NewInstance;
 
 class MifistMainAdminSubMenuController extends MifistBaseAdminMenuController
 {
@@ -9,19 +9,19 @@ class MifistMainAdminSubMenuController extends MifistBaseAdminMenuController
     {
         // TODO: Implement action() method.
         $pluginPage = add_submenu_page(
-            MIFISTSLICK_PlUGIN_TEXTDOMAIN,
+	        MIFISTSLICK_PlUGIN_TEXTDOMAIN . '/includes/controllers/admin/page/main-admin-menu.php',
             _x(
-                'Sub Step By Step',
+                'Mifist Sub Page',
                 'admin menu page' ,
                 MIFISTSLICK_PlUGIN_TEXTDOMAIN
             ),
             _x(
-                'Sub Step By Step',
+                'Mifist Sub Page',
                 'admin menu page' ,
                 MIFISTSLICK_PlUGIN_TEXTDOMAIN
             ),
             'manage_options',
-            'step_by_step_control_sub_menu',
+            'mifist_control_sub_menu',
             array(&$this, 'render'));
     }
 
@@ -30,11 +30,6 @@ class MifistMainAdminSubMenuController extends MifistBaseAdminMenuController
         // TODO: Implement render() method.
         _e("Hello world sub menu", MIFISTSLICK_PlUGIN_TEXTDOMAIN);
     }
-
-    public static function newInstance()
-    {
-        // TODO: Implement newInstance() method.
-        $instance = new self;
-        return $instance;
-    }
+	
+    use NewInstance;
 }

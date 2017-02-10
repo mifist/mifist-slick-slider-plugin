@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mifist Slick Slider Plugin v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2017-02-05 00:17+0200\n"
+"POT-Creation-Date: 2017-02-10 03:20+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Moskalets Daria <daria1992moskalets@gmail.com>\n"
@@ -18,13 +18,181 @@ msgstr ""
 "X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;"
-"_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;"
-"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/example/MifistExampleAction.php:23
+#: includes/controllers/admin/menu/MifistMainAdminMenuController.php:16
+#: includes/controllers/admin/menu/MifistMainAdminMenuController.php:21
+msgctxt "admin menu page"
+msgid "Mifist Slick Slider"
+msgstr "Mifist Слайдер"
+
+#: includes/controllers/admin/menu/MifistMainAdminSubMenuController.php:14
+#: includes/controllers/admin/menu/MifistMainAdminSubMenuController.php:19
+msgctxt "admin menu page"
+msgid "Mifist Sub Page"
+msgstr "Mifist под меню"
+
+#: includes/controllers/admin/menu/MifistMainAdminSubMenuController.php:31
+msgid "Hello world sub menu"
+msgstr "Привет мир это подменю"
+
+#: includes/controllers/admin/menu/MifistMyCommentsMenuController.php:12
+#: includes/controllers/admin/menu/MifistMyCommentsMenuController.php:13
+msgid "Sub comments Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyCommentsMenuController.php:23
+msgid "Hello this page Comments"
+msgstr "Привет это страница Комментариев"
+
+#: includes/controllers/admin/menu/MifistMyDashboardMenuController.php:12
+#: includes/controllers/admin/menu/MifistMyDashboardMenuController.php:13
+msgid "Sub dashboard Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyDashboardMenuController.php:23
+msgid "Hello this page dashboards"
+msgstr "Привет это страница Консоли"
+
+#: includes/controllers/admin/menu/MifistMyMediaMenuController.php:12
+#: includes/controllers/admin/menu/MifistMyMediaMenuController.php:13
+msgid "Sub media Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyMediaMenuController.php:23
+msgid "Hello this page media"
+msgstr "Привет это страница Медиафайлов"
+
+#: includes/controllers/admin/menu/MifistMyOptionsMenuController.php:13
+#: includes/controllers/admin/menu/MifistMyOptionsMenuController.php:14
+msgid "Sub options Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyOptionsMenuController.php:24
+msgid "Hello this page Settings"
+msgstr "Привет это страница Настроек"
+
+#: includes/controllers/admin/menu/MifistMyPagesMenuController.php:13
+#: includes/controllers/admin/menu/MifistMyPagesMenuController.php:14
+msgid "Sub pages Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyPagesMenuController.php:24
+msgid "Hello this page Pages"
+msgstr "Привет это страница Страниц"
+
+#: includes/controllers/admin/menu/MifistMyPluginsMenuController.php:13
+#: includes/controllers/admin/menu/MifistMyPluginsMenuController.php:14
+msgid "Sub plugins Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyPluginsMenuController.php:24
+msgid "Hello this page Plugins"
+msgstr "Привет это страница Плагинов"
+
+#: includes/controllers/admin/menu/MifistMyPostsMenuController.php:13
+#: includes/controllers/admin/menu/MifistMyPostsMenuController.php:14
+msgid "Sub posts Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyPostsMenuController.php:24
+msgid "Hello this page posts"
+msgstr "Привет это страница Постов"
+
+#: includes/controllers/admin/menu/MifistMyThemeMenuController.php:13
+#: includes/controllers/admin/menu/MifistMyThemeMenuController.php:14
+msgid "Sub theme Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyThemeMenuController.php:24
+msgid "Hello this page Theme"
+msgstr "Привет это страница Темы"
+
+#: includes/controllers/admin/menu/MifistMyToolsMenuController.php:13
+#: includes/controllers/admin/menu/MifistMyToolsMenuController.php:14
+msgid "Sub tools Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyToolsMenuController.php:24
+msgid "Hello this page Tools"
+msgstr "Привет это страница Инструменты"
+
+#: includes/controllers/admin/menu/MifistMyUsersMenuController.php:13
+#: includes/controllers/admin/menu/MifistMyUsersMenuController.php:14
+msgid "Sub users Mifist"
+msgstr ""
+
+#: includes/controllers/admin/menu/MifistMyUsersMenuController.php:24
+msgid "Hello this page Users"
+msgstr "Привет это страница Пользователи"
+
+#: includes/controllers/admin/page/main-admin-menu.php:14
+msgid "This plugin is an alternative free variant to this plugin of"
+msgstr "Этот плагин является альтернативным бесплатным вариантом этому плагину"
+
+#: includes/controllers/admin/page/main-admin-menu.php:17
+msgid "His possibility with examples can look"
+msgstr "Его возможности с примерами могут выглядеть"
+
+#: includes/controllers/admin/page/main-admin-menu.php:20
+msgid "Features of Slick Slider"
+msgstr "Особенности Slick Slider"
+
+#: includes/controllers/admin/page/main-admin-menu.php:22
+msgid "Fully responsive. Scales with its container."
+msgstr "Респонсив"
+
+#: includes/controllers/admin/page/main-admin-menu.php:23
+msgid "Separate settings per breakpoint"
+msgstr ""
+
+#: includes/controllers/admin/page/main-admin-menu.php:24
+msgid "Uses CSS3 when available. Fully functional when not."
+msgstr "Использование CSS3 если возможно."
+
+#: includes/controllers/admin/page/main-admin-menu.php:25
+msgid "Swipe enabled. Or disabled, if you prefer."
+msgstr "Свайп включен. Или отключен, если вы предпочитаете."
+
+#: includes/controllers/admin/page/main-admin-menu.php:26
+msgid "Desktop mouse dragging"
+msgstr "Переключение слайдов мышкой компьютора"
+
+#: includes/controllers/admin/page/main-admin-menu.php:27
+msgid "Infinite looping."
+msgstr "Зацикливание."
+
+#: includes/controllers/admin/page/main-admin-menu.php:28
+msgid "Fully accessible with arrow key navigation"
+msgstr "Полностью доступны стрелки навигации"
+
+#: includes/controllers/admin/page/main-admin-menu.php:29
+msgid "Add, remove, filter unfilter slides"
+msgstr ""
+
+#: includes/controllers/admin/page/main-admin-menu.php:30
+msgid "Autoplay, dots, arrows, callbacks, etc..."
+msgstr ""
+
+#: includes/controllers/admin/page/main-admin-menu.php:36
+msgid "In version 1.0 implemented:"
+msgstr "В версии 1.0 реализованы:"
+
+#: includes/controllers/admin/page/main-admin-menu.php:37
+msgid ""
+"output with do_shortcode fields \"Title\", \"Description\" and \"Text\"."
+msgstr ""
+"вывод с помощью do_shortcode полей \"Заголовк\", \"Описание\" и \"Основной "
+"текст\"."
+
+#: includes/controllers/admin/page/main-admin-menu.php:38
+msgid "The result of the plug-in:"
+msgstr " Результат работы плагина:"
+
+#: includes/example/MifistExampleAction.php:24
 msgid "Hello"
 msgstr "Привет МИР!"

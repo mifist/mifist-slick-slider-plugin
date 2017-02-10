@@ -1,25 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: solomashenko
- * Date: 29.01.17
- * Time: 19:19
- */
-
 namespace includes\controllers\admin\menu;
 
 
-class StepByStepMyCommentsMenuController extends StepByStepBaseAdminMenuController
+class MifistMyCommentsMenuController extends MifistBaseAdminMenuController
 {
     public function action()
     {
         // TODO: Implement action() method.
 
         $pluginPage = add_comments_page(
-            __('Sub comments Step By Step', STEPBYSTEP_PlUGIN_TEXTDOMAIN),
-            __('Sub comments Step By Step', STEPBYSTEP_PlUGIN_TEXTDOMAIN),
+            __('Sub comments Mifist', MIFISTSLICK_PlUGIN_TEXTDOMAIN),
+            __('Sub comments Mifist', MIFISTSLICK_PlUGIN_TEXTDOMAIN),
             'read',
-            'step_by_step_control_sub_comments_menu',
+            'mifisi_control_sub_comments_menu',
             array(&$this, 'render')
         );
     }
@@ -27,7 +20,7 @@ class StepByStepMyCommentsMenuController extends StepByStepBaseAdminMenuControll
     public function render()
     {
         // TODO: Implement render() method.
-        _e("Hello this page Comments", STEPBYSTEP_PlUGIN_TEXTDOMAIN);
+        _e("Hello this page Comments", MIFISTSLICK_PlUGIN_TEXTDOMAIN);
     }
 
     public static function newInstance()
