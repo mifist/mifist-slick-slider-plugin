@@ -21,7 +21,15 @@ class MifistMyThemeMenuController extends MifistBaseAdminMenuController
     public function render()
     {
         // TODO: Implement render() method.
-        _e("Hello this page Theme", MIFISTSLICK_PlUGIN_TEXTDOMAIN);
+	    echo '<br /><h1 class="mif-admin-title">' . get_admin_page_title() . '</h1>';
+	    echo '<br />
+			<span class="admin-page--hello">'.
+		    _x("Hello world :) This page Theme", MIFISTSLICK_PlUGIN_TEXTDOMAIN)
+		    .'</span>';
+	    echo '<br />
+			<span class="admin-page--welcome">'.
+		    _x("Welcome!", MIFISTSLICK_PlUGIN_TEXTDOMAIN)
+		    .'</span>';
     }
 
     use NewInstance;
