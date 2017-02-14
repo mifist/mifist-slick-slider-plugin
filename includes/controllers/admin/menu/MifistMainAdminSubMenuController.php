@@ -9,7 +9,7 @@ class MifistMainAdminSubMenuController extends MifistBaseAdminMenuController
     {
         // TODO: Implement action() method.
         $pluginPage = add_submenu_page(
-	        MIFISTSLICK_PlUGIN_TEXTDOMAIN . '/includes/controllers/admin/page/main-admin-menu.php',
+	        MIFISTSLICK_PlUGIN_TEXTDOMAIN,
             _x(
                 'Mifist Sub Page',
                 'admin menu page' ,
