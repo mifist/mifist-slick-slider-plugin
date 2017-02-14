@@ -2,11 +2,7 @@
 // Для этого нужно создать функцию, которую следует привязать к действию 'admin_menu'.
 namespace includes\controllers\admin\menu;
 
-interface MifistIСreatorInstance {
-	public static function newInstance();
-}
-
-abstract class MifistBaseAdminMenuController implements MifistIСreatorInstance {
+abstract class MifistBaseAdminMenuController implements MifistICreatorInstance {
     public function __construct(){
         /*
          * Регистрирует хук-событие. При регистрации указывается PHP функция,

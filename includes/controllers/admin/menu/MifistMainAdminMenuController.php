@@ -23,9 +23,8 @@ class MifistMainAdminMenuController extends MifistBaseAdminMenuController {
                 MIFISTSLICK_PlUGIN_TEXTDOMAIN
             ),
             'manage_options',
-	        // MIFISTSLICK_PlUGIN_TEXTDOMAIN,
-	        MIFISTSLICK_PlUGIN_TEXTDOMAIN . '/includes/controllers/admin/page/main-admin-menu.php',
-	        '', // array(&$this,'render'),
+	        MIFISTSLICK_PlUGIN_TEXTDOMAIN,
+	         array(&$this,'render'),
             MIFISTSLICK_PlUGIN_URL .'assets/admin/images/picture.svg',
 	        9 // $position перед Медиа
         );
@@ -36,7 +35,8 @@ class MifistMainAdminMenuController extends MifistBaseAdminMenuController {
      */
     public function render() {
     	// TODO: Implement render() method.
+        require_once MIFISTSLICK_PlUGIN_DIR . '/includes/controllers/admin/page/main-admin-menu.php';
 	}
-	
+
    use NewInstance;
 }
