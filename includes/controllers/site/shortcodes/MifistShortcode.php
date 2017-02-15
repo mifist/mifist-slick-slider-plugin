@@ -1,5 +1,5 @@
 <?php
-namespace includes\shortcodes;
+namespace includes\controllers\site\shortcodes;
 use includes\common\GetInstance;
 
 // создание шоткода

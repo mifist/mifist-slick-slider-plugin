@@ -1,40 +1,34 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: romansolomashenko
- * Date: 08.02.17
- * Time: 9:47 PM
- */
-
 namespace includes\common;
 
 
-class StepByStepRequestApi
-{
-    const STEPBYSTEP_API_V2 = "http://api.travelpayouts.com/v2";
-    const STEPBYSTEP_TOKEN = "b2f8bef81735323aecb33e285da8e694";
-    const STEPBYSTEP_MARKER = "17942";
-    private static $instance = null;
-
-    private function __construct(){
-
-    }
-    public static function getInstance(){
-        if ( null == self::$instance ) {
-            self::$instance = new self;
-        }
-        return self::$instance;
-    }
+class MifistRequestApi {
+    const MIFISTSLICK_API_INDEX_HTML = 'https://api.github.com/repos/kenwheeler/slick/contents/index.html';
+    const MIFISTSLICK_TOKEN = '2a559eed26006545b4cde58d9c0500e9df4fd74c';
+  //  const MIFISTSLICK_SHA = '761bebfd2731ade11ede557b5b37b2f959b61ac9';
+   // const MIFISTSLICK_MARKER = '17942';
+	private static $instance = null;
+	
+	private function __construct(){
+		
+	}
+	public static function getInstance(){
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
+		return self::$instance;
+	}
+	
 
     public function getToken(){
-        return "&token=".self::STEPBYSTEP_TOKEN;
+        return "&token=".self::MIFISTSLICK_TOKEN;
     }
 
 
     /**
-     * Календарь цен на месяц
+     * Вывод
      * Запрос
-     * http://api.travelpayouts.com/v2/prices/month-matrix
+     * https://api.github.com/repos/kenwheeler/slick
      * Параметры запроса
      * currency — валюта цен на билеты. Значение по умолчанию — rub.
      * origin — пункт отправления. IATA код города или код страны. Длина не менее 2 и не более 3 символов.
@@ -45,40 +39,47 @@ class StepByStepRequestApi
      *                      Значение по умолчанию — true.
      * month — первый день месяца, в формате «YYYY-MM-DD».
      */
-    public function getCalendarPricesMonth($currency, $origin, $destination, $month = ""){
+    public function getSlickDoc($contents /*$currency, $origin, $destination, $month = ""*/){
         $requestURL = "";
-        if ($currency == false || empty($currency)){
-            $currency = "currency=RUB";
+//        if ($currency == false || empty($currency)){
+//            $currency = "currency=RUB";
+//        } else {
+//            $currency = "currency={$currency}";
+//        }
+//        if ($origin == false || empty($origin)){
+//            return false;
+//        } else {
+//            $origin = "&origin={$origin}";
+//        }
+//        if ($destination == false || empty($destination)){
+//            return false;
+//        } else {
+//            $destination = "&destination={$destination}";
+//        }
+//        if ($month == false || empty($month)){
+//            $month = "&month=".date('Y-m-d');
+//        } else {
+//            $month = "&month={$month}";
+//        }
+	    if ($contents == false || empty($contents)){
+		    return false;
         } else {
-            $currency = "currency={$currency}";
+            $contents = "{$contents}";
+		    return $contents;
         }
-        if ($origin == false || empty($origin)){
-            return false;
-        } else {
-            $origin = "&origin={$origin}";
-        }
-        if ($destination == false || empty($destination)){
-            return false;
-        } else {
-            $destination = "&destination={$destination}";
-        }
-        if ($month == false || empty($month)){
-            $month = "&month=".date('Y-m-d');
-        } else {
-            $month = "&month={$month}";
-        }
-        $requestURL = self::STEPBYSTEP_API_V2."/prices/month-matrix?{$currency}{$origin}{$destination}{$month}"
-            .$this->getToken();
-
-        return $this->requestAPI($requestURL);
+	   
     }
 
     public function requestAPI($requestURL){
-        $response = wp_remote_get( $requestURL, array('headers' => array(
+	    $requestURL = 'https://api.github.com/repos/kenwheeler/slick/contents/index.html'
+	      .$this->getToken();
+        $response = wp_remote_get( $requestURL, array(
             'Accept-Encoding' => 'gzip, deflate',
-        )) );
-        $body = wp_remote_retrieve_body($response);
-        $json = json_decode($body);
+	        'compress'  => true,
+	        'decompress'  => true
+        ) );
+       // $body = wp_remote_retrieve_body($response);
+        $json = json_decode($response);
         if (!is_wp_error($json) && $json->success == true) {
             return $json->data;
         } else {
