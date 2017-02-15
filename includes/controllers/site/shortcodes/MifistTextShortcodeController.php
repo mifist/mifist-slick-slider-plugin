@@ -9,10 +9,10 @@ use includes\models\site\MifistTextShortcodeModel;
 class MifistTextShortcodeController extends MifistShortcodesController
 	implements MifistICreatorInstance
 {
-	public $model;
+	//public $model;
 	public function __construct() {
 		parent::__construct();
-		$this->model = MifistTextShortcodeModel::newInstance();
+		//$this->model = MifistTextShortcodeModel::newInstance();
 	}
 	/**
 	 * Функция в которой будем добалять шорткоды через функцию add_shortcode( $tag , $func );
@@ -55,12 +55,11 @@ class MifistTextShortcodeController extends MifistShortcodesController
 		 * атрибуты. Устанавливает значения атрибута по умолчанию, если он не указан.
 		 */
 		$atts = shortcode_atts( array(
-			'code' => ''
+			'content' => ''
 		), $atts, $tag );
-		/*$reuestAPI = StepByStepRequestApi::getInstance();
-		$data = $reuestAPI->getCalendarPricesMonth($atts['currency'], $atts['origin'],
-			$atts['destination'], $atts['month']);*/
-		$data = $this->model->getData($atts['code']);
+		$reuestAPI = MifistRequestApi::getInstance();
+		$data = $reuestAPI-> getReadMeSlick();
+		//$data = $this->model->getData($atts['content']);
 		if ($data == false) return false;
 		return $this->render($data);
 	}

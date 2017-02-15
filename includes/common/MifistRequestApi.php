@@ -38,25 +38,23 @@ class MifistRequestApi
 	 *                      Значение по умолчанию — true.
 	 * month — первый день месяца, в формате «YYYY-MM-DD».
 	 */
-	public function getReadMeSlick($code){
+	public function getReadMeSlick(/*$code*/){
 		$requestURL = '';
-		if ($code == false || empty($code)){
+	/*	if ($code == false || empty($code)){
 			return false;
 		} else {
 			$code = "content={$code}";
-		}
-		$requestURL = self::MIFISTSLICK_API_README.'?{$code}'
-			.$this->getToken();
+		}*/
+		$requestURL = self::MIFISTSLICK_API_README /* . '?{$code}'*/
+			/*.$this->getToken()*/;
 		
 		return $this->requestAPI($requestURL);
 	}
 	
 	public function requestAPI($requestURL){
-		$response = wp_remote_get( $requestURL, array(
-			'headers' => array(
-				'Accept-Encoding' => 'gzip, deflate'
-			)
-		));
+		$response = wp_remote_get( $requestURL,  array('headers' => array(
+			'Accept-Encoding' => 'gzip, deflate'
+		)) );
 		$body = wp_remote_retrieve_body($response);
 		$json = json_decode($body);
 		if (!is_wp_error($json) && $json->success == true) {
