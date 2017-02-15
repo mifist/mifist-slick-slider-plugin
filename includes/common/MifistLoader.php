@@ -3,7 +3,8 @@ namespace includes\common;
 
 // Пути namespace к классам
 
-use includes\shortcodes\MifistShortcode;
+use includes\controllers\site\shortcodes\MifistTextShortcodeController;
+use includes\controllers\site\shortcodes\MifistShortcode;
 // menu
 
 use includes\controllers\admin\menu\MifistMainAdminMenuController;
@@ -47,23 +48,23 @@ class MifistLoader {
 	    MifistMainAdminMenuController::newInstance();
 	    MifistMainAdminSubMenuController::newInstance();
 	    // custom admin menu
-	    MifistMyCommentsMenuController::newInstance();
-	    MifistMyDashboardMenuController::newInstance();
-	    MifistMyMediaMenuController::newInstance();
-	    MifistMyOptionsMenuController::newInstance();
-	    MifistMyPagesMenuController::newInstance();
-	    MifistMyPluginsMenuController::newInstance();
-	    MifistMyPostsMenuController::newInstance();
-	    MifistMyThemeMenuController::newInstance();
-	    MifistMyToolsMenuController::newInstance();
-	    MifistMyUsersMenuController::newInstance();
+//	    MifistMyCommentsMenuController::newInstance();
+//	    MifistMyDashboardMenuController::newInstance();
+//	    MifistMyMediaMenuController::newInstance();
+//	    MifistMyOptionsMenuController::newInstance();
+//	    MifistMyPagesMenuController::newInstance();
+//	    MifistMyPluginsMenuController::newInstance();
+//	    MifistMyPostsMenuController::newInstance();
+//	    MifistMyThemeMenuController::newInstance();
+//	    MifistMyToolsMenuController::newInstance();
+//	    MifistMyUsersMenuController::newInstance();
     }
 
     /**
      * Метод будет срабатывать когда вы находитесь Сайте. Загрузка классов для Сайта
      */
     public function site(){
-      
+	    MifistTextShortcodeController::newInstance();
     }
 
     /**
