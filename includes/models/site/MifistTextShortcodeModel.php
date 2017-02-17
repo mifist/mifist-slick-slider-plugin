@@ -31,7 +31,7 @@ class MifistTextShortcodeModel implements MifistICreatorInstance {
 		$cacheKey = $this->getCacheKey();
 		if ( false === ($data = get_transient($cacheKey))) {
 			$reuestAPI = MifistRequestApi::getInstance();
-			$data = $reuestAPI;
+			$data = $reuestAPI->getGitContent();
 			set_transient($cacheKey, $data, 100);
 		}
 		
