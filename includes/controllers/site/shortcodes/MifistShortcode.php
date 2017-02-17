@@ -12,12 +12,12 @@ class MifistShortcode {
 	}
 
 	// проверка и вывод скрипта для шорткода
-	function enqueueScriptsStyle() {
-		$pluginPrefix = "mifist-";
-		wp_enqueue_style( "{$pluginPrefix}-css", MIFISTSLICK_PlUGIN_URL . 'assets/core/css/mssp-style.css' );
-		wp_enqueue_script( "{$pluginPrefix}-js", MIFISTSLICK_PlUGIN_URL . 'assets/core/js/slick.min.js', array('jquery'),
-			null, true);
-	}
+//	function enqueueScriptsStyle() {
+//		$pluginPrefix = "mifist-";
+//		wp_enqueue_style( "{$pluginPrefix}-css", MIFISTSLICK_PlUGIN_URL . 'assets/core/css/mssp-style.css' );
+//		wp_enqueue_script( "{$pluginPrefix}-js", MIFISTSLICK_PlUGIN_URL . 'assets/core/js/slick.min.js', array('jquery'),
+//			null, true);
+//	}
 	//вывод кода на страницу
 	static public function shortcode_code ($atts, $content = "") {
 		// инициализация глобальных переменных для mif_slide, при необходимости
