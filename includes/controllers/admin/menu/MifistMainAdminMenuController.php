@@ -35,8 +35,7 @@ class MifistMainAdminMenuController extends MifistBaseAdminMenuController {
      */
     public function render() {
     	// TODO: Implement render() method.
-	    $pathView = MIFISTSLICK_PlUGIN_DIR . '/includes/views/admin/menu/MifistMainAdminMenu.view.php';
-	    $this->loadView($pathView);
+        require_once MIFISTSLICK_PlUGIN_DIR . '/includes/controllers/admin/page/main-admin-menu.php';
 	}
 
    use NewInstance;

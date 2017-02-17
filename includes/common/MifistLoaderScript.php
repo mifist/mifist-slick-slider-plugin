@@ -39,9 +39,7 @@ class MifistLoaderScript {
 		 * Добавляет скрипт, только если он еще не был добавлен и другие скрипты от которых он зависит зарегистрированы.
 		 * Зависимые скрипты добавляются автоматически.
 		 */
-		
 		//wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-admin-js');
-		
 		// STYLE
 		wp_register_style(
 			MIFISTSLICK_PlUGIN_SLUG.'-admin', //$handle

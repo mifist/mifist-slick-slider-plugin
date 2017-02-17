@@ -3,11 +3,16 @@ namespace includes\models\site;
 
 
 use includes\common\MifistRequestApi;
-use includes\common\NewInstance;
+
 use includes\controllers\admin\menu\MifistICreatorInstance;
 
 class MifistTextShortcodeModel implements MifistICreatorInstance {
-	use NewInstance;
+	public static function newInstance() {
+		// TODO: Implement newInstance() method.
+		$instance = new self;
+		return $instance;
+	}
+	
 	public function __construct() {
 		
 	}
@@ -25,8 +30,10 @@ class MifistTextShortcodeModel implements MifistICreatorInstance {
 		$data = array();
 		$cacheKey = $this->getCacheKey();
 		if ( false === ($data = get_transient($cacheKey))) {
+			//error.log
+			error_log("Проверка работы кеша. Будет срабатывать когда нет данных в кеше.");
 			$reuestAPI = MifistRequestApi::getInstance();
-			$data = $reuestAPI;
+			$data = $reuestAPI->getGitContent();
 			set_transient($cacheKey, $data, 100);
 		}
 		
@@ -40,6 +47,8 @@ class MifistTextShortcodeModel implements MifistICreatorInstance {
 		$code = "gitapi";
 		return MIFISTSLICK_PlUGIN_TEXTDOMAIN
 			."_slick_slide_readme_{$code}";
+		
 	}
+	
 	
 }
