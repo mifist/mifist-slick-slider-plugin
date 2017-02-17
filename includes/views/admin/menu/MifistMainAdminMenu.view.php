@@ -7,7 +7,7 @@
  */
 
 echo '<div class="row mifist-plugin">';
-		echo '<br /><h1 class="mif-admin-title">' . get_admin_page_title() . '</h1>';
+echo '<br /><h1 class="mif-admin-title">' . get_admin_page_title() . '</h1>';
 echo '<div class="small-12 medium-12 large-6 columns">	
 		<h3>'. _x("This plugin is an alternative free variant to this plugin of", MIFISTSLICK_PlUGIN_TEXTDOMAIN) .'
 			<a href="http://maxgalleria.com/downloads/slick-slider-for-wordpress/" target="_blank">MaxGlleria</a>.
