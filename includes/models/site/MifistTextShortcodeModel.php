@@ -3,11 +3,16 @@ namespace includes\models\site;
 
 
 use includes\common\MifistRequestApi;
-use includes\common\NewInstance;
+
 use includes\controllers\admin\menu\MifistICreatorInstance;
 
 class MifistTextShortcodeModel implements MifistICreatorInstance {
-	use NewInstance;
+	public static function newInstance() {
+		// TODO: Implement newInstance() method.
+		$instance = new self;
+		return $instance;
+	}
+	
 	public function __construct() {
 		
 	}
@@ -20,10 +25,10 @@ class MifistTextShortcodeModel implements MifistICreatorInstance {
 	 * @param string $month
 	 * @return array|bool
 	 */
-	public function getData($code){
+	public function getData(){
 		$cacheKey = "";
 		$data = array();
-		$cacheKey = $this->getCacheKey($code);
+		$cacheKey = $this->getCacheKey();
 		if ( false === ($data = get_transient($cacheKey))) {
 			$reuestAPI = MifistRequestApi::getInstance();
 			$data = $reuestAPI;
@@ -36,9 +41,11 @@ class MifistTextShortcodeModel implements MifistICreatorInstance {
 	/**
 	 * Создает ключ для кэша
 	 */
-	public function getCacheKey($code){
+	public function getCacheKey(){
+		$code = "gitapi";
 		return MIFISTSLICK_PlUGIN_TEXTDOMAIN
 			."_slick_slide_readme_{$code}";
 	}
+	
 	
 }

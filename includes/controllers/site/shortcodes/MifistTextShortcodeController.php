@@ -3,13 +3,12 @@ namespace includes\controllers\site\shortcodes;
 
 
 use includes\common\MifistRequestApi;
-use includes\common\NewInstance;
 use includes\controllers\admin\menu\MifistICreatorInstance;
 use includes\models\site\MifistTextShortcodeModel;
 
 class MifistTextShortcodeController extends MifistShortcodesController
 	implements MifistICreatorInstance {
-	use NewInstance;
+	
 	public $model;
 	public function __construct() {
 		parent::__construct();
@@ -55,7 +54,8 @@ class MifistTextShortcodeController extends MifistShortcodesController
 		 * Объединяет атрибуты (параметры) шоткода с известными атрибутами, остаются только известные
 		 * атрибуты. Устанавливает значения атрибута по умолчанию, если он не указан.
 		 */
-		$data = MifistRequestApi::getInstance();
+		
+		$data = $this->model->getData();
 		if ($data == false) return false;
 		return $this->render($data);
 	}
@@ -67,8 +67,13 @@ class MifistTextShortcodeController extends MifistShortcodesController
 	 */
 	public function render($data)
 	{
+		
 		// TODO: Implement render() method.
 		var_dump('<pre>', $data, '</pre>');
 	}
-	
+	public static function newInstance() {
+		// TODO: Implement newInstance() method.
+		$instance = new self;
+		return $instance;
+	}
 }
