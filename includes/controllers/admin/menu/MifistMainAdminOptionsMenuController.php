@@ -4,6 +4,7 @@ use includes\common\NewInstance;
 use includes\models\admin\menu\MifistMainAdminOptionsMenuModel;
 
 class MifistMainAdminOptionsMenuController extends MifistBaseAdminMenuController {
+	use NewInstance;
 	public $model;
 	public function __construct(){
 		parent::__construct();
@@ -36,5 +37,5 @@ class MifistMainAdminOptionsMenuController extends MifistBaseAdminMenuController
 	    $this->loadView($pathView);
     }
 	
-    use NewInstance;
+   
 }

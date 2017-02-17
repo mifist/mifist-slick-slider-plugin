@@ -19,7 +19,7 @@ class MifistRequestApi {
 		$response = wp_remote_get( 'https://api.github.com/repos/kenwheeler/slick/contents/README.markdown',
 			array('headers' => array(
 			//'Accept-Encoding' => 'gzip, deflate'
-			//'Content-type' => 'application/json'
+			'Content-type' => 'application/json'
 		)) );
 		$body = wp_remote_retrieve_body($response);
 		$json = json_decode($body);
