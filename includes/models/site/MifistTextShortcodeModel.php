@@ -3,11 +3,11 @@ namespace includes\models\site;
 
 
 use includes\common\MifistRequestApi;
+use includes\common\NewInstance;
 use includes\controllers\admin\menu\MifistICreatorInstance;
 
-class MifistTextShortcodeModel implements MifistICreatorInstance
-{
-	
+class MifistTextShortcodeModel implements MifistICreatorInstance {
+	use NewInstance;
 	public function __construct() {
 		
 	}
@@ -26,7 +26,7 @@ class MifistTextShortcodeModel implements MifistICreatorInstance
 		$cacheKey = $this->getCacheKey($code);
 		if ( false === ($data = get_transient($cacheKey))) {
 			$reuestAPI = MifistRequestApi::getInstance();
-			$data = $reuestAPI->getReadMeSlick($code);
+			$data = $reuestAPI;
 			set_transient($cacheKey, $data, 100);
 		}
 		
@@ -41,10 +41,4 @@ class MifistTextShortcodeModel implements MifistICreatorInstance
 			."_slick_slide_readme_{$code}";
 	}
 	
-	public static function newInstance()
-	{
-		// TODO: Implement newInstance() method.
-		$instance = new self;
-		return $instance;
-	}
 }
