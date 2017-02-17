@@ -30,6 +30,8 @@ class MifistTextShortcodeModel implements MifistICreatorInstance {
 		$data = array();
 		$cacheKey = $this->getCacheKey();
 		if ( false === ($data = get_transient($cacheKey))) {
+			//error.log
+			error_log("Проверка работы кеша. Будет срабатывать когда нет данных в кеше.");
 			$reuestAPI = MifistRequestApi::getInstance();
 			$data = $reuestAPI->getGitContent();
 			set_transient($cacheKey, $data, 100);
@@ -45,6 +47,7 @@ class MifistTextShortcodeModel implements MifistICreatorInstance {
 		$code = "gitapi";
 		return MIFISTSLICK_PlUGIN_TEXTDOMAIN
 			."_slick_slide_readme_{$code}";
+		
 	}
 	
 	
