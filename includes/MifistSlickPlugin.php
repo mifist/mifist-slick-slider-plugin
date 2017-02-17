@@ -3,6 +3,7 @@
 
 
 namespace includes;
+use includes\common\MifistDefaultOption;
 use includes\common\MifistLoader;
 use includes\common\GetInstance;
 
@@ -10,11 +11,22 @@ use includes\common\GetInstance;
 class MifistSlickPlugin {
 	use GetInstance;
     private function __construct() {
-    	
         MifistLoader::getInstance();
+	    add_action('plugins_loaded', array(&$this, 'setDefaultOptions'));
     }
- 
-
+	
+	/**
+	 * Если не созданные настройки установить по умолчанию
+	 */
+	public function setDefaultOptions(){
+		if( ! get_option(MIFISTSLICK_PlUGIN_OPTION_NAME) ){
+			update_option( MIFISTSLICK_PlUGIN_OPTION_NAME, MifistDefaultOption::getDefaultOptions() );
+		}
+		if( ! get_option(MIFISTSLICK_PlUGIN_OPTION_VERSION) ){
+			update_option(MIFISTSLICK_PlUGIN_OPTION_VERSION, MIFISTSLICK_PlUGIN_VERSION);
+		}
+	}
+	
     static public function activation()
     {
         // debug.log
@@ -27,6 +39,8 @@ class MifistSlickPlugin {
     {
         // debug.log
         error_log('plugin '.MIFISTSLICK_PlUGIN_NAME.' deactivation');
+	    delete_option(MIFISTSLICK_PlUGIN_OPTION_NAME);
+	    delete_option(MIFISTSLICK_PlUGIN_OPTION_VERSION);
     }
 
 }
