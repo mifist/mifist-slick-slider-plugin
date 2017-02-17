@@ -12,7 +12,7 @@ class MifistTextShortcodeController extends MifistShortcodesController
 	public $model;
 	public function __construct() {
 		parent::__construct();
-		$this->model = MifistTextShortcodeModel::newInstance();
+		//$this->model = MifistTextShortcodeModel::newInstance();
 	}
 	/**
 	 * Функция в которой будем добалять шорткоды через функцию add_shortcode( $tag , $func );
@@ -54,8 +54,10 @@ class MifistTextShortcodeController extends MifistShortcodesController
 		 * Объединяет атрибуты (параметры) шоткода с известными атрибутами, остаются только известные
 		 * атрибуты. Устанавливает значения атрибута по умолчанию, если он не указан.
 		 */
+		$reuestAPI = MifistRequestApi::getInstance();
+		$data = $reuestAPI->getGitContent();
 		
-		$data = $this->model->getData();
+		//$data = $this->model->getData();
 		if ($data == false) return false;
 		return $this->render($data);
 	}
