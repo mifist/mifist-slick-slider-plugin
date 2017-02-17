@@ -71,7 +71,8 @@ class MifistTextShortcodeController extends MifistShortcodesController
 	{
 		
 		// TODO: Implement render() method.
-		var_dump('<pre>', $data, '</pre>');
+		//var_dump('<pre>', $data, '</pre>');
+		echo '<p><code>' . base64_decode($data) . '</code></p>';
 	}
 	public static function newInstance() {
 		// TODO: Implement newInstance() method.
