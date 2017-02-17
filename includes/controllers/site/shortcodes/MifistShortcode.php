@@ -9,7 +9,6 @@ class MifistShortcode {
 	public function __construct() {
 		add_shortcode( 'mifshortcode', array( $this, 'shortcode_code' ) );
 		add_shortcode( 'mifdescription', array( $this, 'description_code' ) );
-		
 	}
 
 	// проверка и вывод скрипта для шорткода
@@ -67,18 +66,6 @@ class MifistShortcode {
 		$GLOBALS['shortcode-count'] = $i;
 		// ничего не выводим
 		return true;
-	}
-	public function requestAPI(){
-		$response = wp_remote_get( "https://api.github.com/repos/kenwheeler/slick/git/blobs/761bebfd2731ade11ede557b5b37b2f959b61ac9", array('headers' => array(
-			'Accept-Encoding' => 'gzip, deflate',
-		)) );
-		$body = wp_remote_retrieve_body($response);
-		$json = json_decode($body);
-		if (!is_wp_error($json) && $json->success == true) {
-			return $json->data;
-		} else {
-			return false;
-		}
 	}
 }
 

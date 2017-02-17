@@ -8,7 +8,7 @@ use includes\controllers\site\shortcodes\MifistShortcode;
 // menu
 
 use includes\controllers\admin\menu\MifistMainAdminMenuController;
-use includes\controllers\admin\menu\MifistMainAdminSubMenuController;
+use includes\controllers\admin\menu\MifistMainAdminOptionsMenuController;
 // custom admin menu
 use includes\controllers\admin\menu\MifistMyCommentsMenuController;
 use includes\controllers\admin\menu\MifistMyDashboardMenuController;
@@ -46,7 +46,7 @@ class MifistLoader {
     public function admin(){
     	// MENU
 	    MifistMainAdminMenuController::newInstance();
-	    MifistMainAdminSubMenuController::newInstance();
+	    MifistMainAdminOptionsMenuController::newInstance();
 	    // custom admin menu
 //	    MifistMyCommentsMenuController::newInstance();
 //	    MifistMyDashboardMenuController::newInstance();
