@@ -13,6 +13,7 @@ use includes\controllers\admin\menu\MifistMainAdminOptionsMenuController;
 use includes\controllers\admin\menu\MifistGuestBookSubMenuController;
 // GUEST BOOK
 use includes\controllers\site\shortcodes\MifistGuestBookShortcodesController;
+use includes\controllers\site\shortcodes\MifistGuestBookAjaxShortcodesController;
 // Widget
 use includes\widgets\MifistGuestBookDashboardWidget;
 // Ajax
@@ -81,6 +82,7 @@ class MifistLoader {
 	    MifistTextShortcodeController::newInstance();
 	    // Шорткод для формы гостевой книги
 	    MifistGuestBookShortcodesController::newInstance();
+	    MifistGuestBookAjaxShortcodesController::newInstance();
     }
 
     /**

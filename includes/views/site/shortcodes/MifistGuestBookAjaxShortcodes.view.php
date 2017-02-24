@@ -16,6 +16,6 @@ $output .= '<form class="mifist-guest-form" method="post">
     <input type="email" name="mifist_user_mail" class="mifist-user-mail">
     <label>'.__('Message', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</label>
     <textarea name="mifist_message" class="mifist-message"></textarea>
-    <button class="mifist-btn-add" >'.__('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</button>                   
+    <button class="mifist-ajax-btn-add" >'.__('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</button>                   
 </form>';
 echo $output;
