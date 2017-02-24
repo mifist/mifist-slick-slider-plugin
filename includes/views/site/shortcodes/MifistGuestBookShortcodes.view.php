@@ -1,11 +1,11 @@
 <!-- Ссылка ссылаеться на страницу гостевой книги только у нее добавлен $_GET['action'] параметр &action=add_data
     По этому параметру мы будем в методе render определять что делать
  -->
-<a href="admin.php?page=mifist_control_guest_book_menu&action=add_data">
+<a href="<?php echo wp_get_shortlink() . '&action=add_data'; ?>">
     <?php _e('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
 </a>
 
-<table class="admin-table " border="1">
+<table class="shortcode-table " border="1">
     <thead>
     <tr>
 	   <!-- <td>
@@ -60,10 +60,10 @@
                      для редактирования &action=edit_data для удаления &action=delete_data и в этих ссылок еще добавлен
                      один $_GET['id'] параметр это &id=(id записи) записи гостевой книги по котором мы будем выполнять
                      действия -->
-                    <a href="admin.php?page=mifist_control_guest_book_menu&action=edit_data&id=<?php echo $value['id'];?>">
+                    <a href="<?php echo wp_get_shortlink() . '&action=edit_data&id=' . $value['id'];?>">
                         <?php _e('Edit', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                     </a>
-                    <a href="admin.php?page=mifist_control_guest_book_menu&action=delete_data&id=<?php echo $value['id'];?>">
+                    <a href="<?php  echo wp_get_shortlink() . '&action=delete_data&id=' .  $value['id'];?>">
                         <?php _e('Delete', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                     </a>
 

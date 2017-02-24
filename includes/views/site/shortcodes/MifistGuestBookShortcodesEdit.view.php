@@ -6,7 +6,7 @@
 записи в таблицы которую мы будем редактировать. И еще есть одно скрытое поле id по котором будем обновлять запись в таблице.
 -->
 
-<form action="admin.php?page=mifist_control_guest_book_menu&action=update_data" method="post">
+<form action="<?php echo wp_get_shortlink() . '&action=update_data'; ?>" method="post">
 	<!--<select name="user_category" id="user_category">
 		<?php /*echo $data['user_category']; */?>
 	</select>-->
