@@ -100,9 +100,7 @@ class MifistGuestBookWidget extends \WP_Widget
 			    <td>
 				    <?php _e('Date', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
 			    </td>
-			    <td>
-				    <?php _e('Actions', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
-			    </td>
+			    
 		    </tr>
 		    </thead>
 		    <tbody>
