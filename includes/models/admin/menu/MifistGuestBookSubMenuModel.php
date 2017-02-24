@@ -26,9 +26,13 @@ class MifistGuestBookSubMenuModel
 		$tableName = self::getTableName();
 		$sql = "CREATE TABLE " .$tableName. "(
                               id int(11) NOT NULL AUTO_INCREMENT,
+                              /*user_category ENUM('дом', 'работа', 'учеба', 'тест', 'проходили мимо') NOT NULL,*/
                               date_add int(11) NOT NULL,
-                              user_name varchar(255) NOT NULL,
+                              user_name varchar(150) NOT NULL,
+                              age SMALLINT(6) NOT NULL,
+                              user_mail varchar(150) NOT NULL,
                               message text NOT NULL,
+                            /*  UNIQUE('user_mail'),*/
                               PRIMARY KEY (id)
                             ) CHARACTER SET utf8 COLLATE utf8_general_ci;";
 		// Проверяем на наличие таблицы в базе данных и если ее нет то создаем
@@ -45,7 +49,9 @@ class MifistGuestBookSubMenuModel
 	 */
 	static public function getById($id){
 		global $wpdb;
-		$data = $wpdb->get_row("SELECT * FROM ".self::getTableName()." WHERE id= ". $id, ARRAY_A);
+		$data2 = $wpdb->get_row("SELECT * FROM ".self::getTableName()." WHERE id= ". $id, ARRAY_A);
+		// очистка переменной $data от SQL инъекций используя esc_sql
+		$data = esc_sql($data2);
 		if(count($data) > 0) return $data;
 		return false;
 	}
@@ -84,8 +90,7 @@ class MifistGuestBookSubMenuModel
 	/**
 	 * Метод удаляет таблицу в базе данных
 	 */
-	static public function deleteTable()
-	{
+	static public function deleteTable() {
 		global $wpdb;
 		$wpdb->query("DROP TABLE IF EXISTS ".self::getTableName());
 	}
@@ -98,7 +103,8 @@ class MifistGuestBookSubMenuModel
 	{
 		// TODO: Implement getAll() method.
 		global $wpdb;
-		$data = $wpdb->get_results( "SELECT * FROM ".self::getTableName()." ORDER BY date_add DESC", ARRAY_A);
+		$data2 = $wpdb->get_results( "SELECT * FROM ".self::getTableName()." ORDER BY date_add DESC", ARRAY_A);
+		$data = esc_sql($data2);
 		if(count($data) > 0) return $data;
 		return false;
 	}
