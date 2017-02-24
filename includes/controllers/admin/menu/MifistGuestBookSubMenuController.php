@@ -27,8 +27,7 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 			array(&$this, 'render'));
 	}
 	
-	public function render()
-	{
+	public function render() {
 		// TODO: Implement render() method.
 		/*
 		В Гостевой книги может быть несколько view (Отображение данных таблицы,
@@ -48,14 +47,14 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 			// Подгружаем view для добавление данных в таблицу
 			// admin.php?page=mifist_control_guest_book_menu&action=add_data
 			case "add_data":
-				$pathView .= "/includes/views/admin/menu/MifistGuestBookSubMenuAdd.view.php";
+				$pathView .= "/includes/views/admin/menu/MifistGuestBookShortcodesAdd.view.php";
 				$this->loadView($pathView, 0, $data);
 				break;
 			// Сохранение данных в таблицу
 			// admin.php?page=mifist_control_guest_book_menu&action=insert_data
 			case "insert_data":
 				/*
-				 * Проверяем наличие данных от формы MifistGuestBookSubMenuAdd.view.php
+				 * Проверяем наличие данных от формы MifistGuestBookShortcodesAdd.view.php
 				 */
 				if (isset($_POST)){
 					/*
@@ -92,7 +91,7 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 				if(isset($_GET['id']) && !empty($_GET['id'])){
 					// Получаем данные записи в таблице по id затем эти данные передадим в view MifistGuestBookSubMenuEdit.view
 					$data = MifistGuestBookSubMenuModel::getById((int)$_GET['id']);
-					$pathView .= "/includes/views/admin/menu/MifistGuestBookSubMenuEdit.view.php";
+					$pathView .= "/includes/views/admin/menu/MifistGuestBookShortcodesEdit.view.php";
 					$this->loadView($pathView, 0, $data);
 				}
 				
@@ -100,7 +99,7 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 			// Обновление редактированых данных в таблице
 			// admin.php?page=mifist_control_guest_book_menu&action=update_data
 			case "update_data":
-				// Проверяем наличие $_POST данных от формы редактирования  MifistGuestBookSubMenuEdit.view.php
+				// Проверяем наличие $_POST данных от формы редактирования  MifistGuestBookShortcodesEdit.view.php
 				//var_dump($_POST);
 				if (isset($_POST)){
 					// Если данные есть то обновляем их в базе данных по ID
