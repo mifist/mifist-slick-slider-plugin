@@ -5,10 +5,19 @@ namespace includes\common;
 
 use includes\controllers\site\shortcodes\MifistTextShortcodeController;
 use includes\controllers\site\shortcodes\MifistShortcode;
-// menu
-
+// custom  menu
 use includes\controllers\admin\menu\MifistMainAdminMenuController;
+//options menu
 use includes\controllers\admin\menu\MifistMainAdminOptionsMenuController;
+// guest book menu
+use includes\controllers\admin\menu\MifistGuestBookSubMenuController;
+// GUEST BOOK
+use includes\controllers\site\shortcodes\MifistGuestBookShortcodesController;
+// Widget
+//use includes\widgets\MifistGuestBookDashboardWidget;
+// Ajax
+//use includes\ajax\MifistGuestBookAjaxHandler;
+
 // custom admin menu
 use includes\controllers\admin\menu\MifistMyCommentsMenuController;
 use includes\controllers\admin\menu\MifistMyDashboardMenuController;
@@ -47,6 +56,11 @@ class MifistLoader {
     	// MENU
 	    MifistMainAdminMenuController::newInstance();
 	    MifistMainAdminOptionsMenuController::newInstance();
+	    // menu for guest book
+	    MifistGuestBookSubMenuController::newInstance();
+	    // Подключаем виджет гостевой книги
+	   // MifistGuestBookDashboardWidget::newInstance();
+	    
 	    // custom admin menu
 //	    MifistMyCommentsMenuController::newInstance();
 //	    MifistMyDashboardMenuController::newInstance();
@@ -65,15 +79,24 @@ class MifistLoader {
      */
     public function site(){
 	    MifistTextShortcodeController::newInstance();
+	    // Шорткод для формы гостевой книги
+	    MifistGuestBookShortcodesController::newInstance();
     }
 
     /**
      * Метод будет срабатывать везде. Загрузка классов для Админ панеле и Сайта
      */
     public function all(){
+    	// проба создания шорткода
 	    MifistShortcode::getInstance();
 	    MifistLocalization::getInstance();
 	    MifistLoaderScript::getInstance();
+	    // подключаем ajax обработчик
+	    //MifistGuestBookAjaxHandler::newInstance();
+	    
+	    
+	    
+	    
 //	    MifistExampleAction::newInstance();
 //	    $mifistExampleFilter = MifistExampleFilter::newInstance();
 //		$mifistExampleFilter->callMyFilter("Roman");
