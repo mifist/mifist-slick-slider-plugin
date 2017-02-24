@@ -4,7 +4,7 @@ namespace includes\common;
 
 class MifistRequestApi {
 	const MIFISTSLICK_GIT_CONTENT = 'https://api.github.com/repos/kenwheeler/slick/contents/README.markdown';
-	const MIFISTSLICK_GIT_CONTENT2 = 'https://api.github.com/repos/kenwheeler/slick/git/blobs/761bebfd2731ade11ede557b5b37b2f959b61ac9';
+	const MIFISTSLICK_GIT_BLOBS_CONTENT = 'https://api.github.com/repos/kenwheeler/slick/git/blobs/761bebfd2731ade11ede557b5b37b2f959b61ac9';
 
 	private static $instance = null;
 	private function __construct(){
