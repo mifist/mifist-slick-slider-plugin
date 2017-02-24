@@ -65,7 +65,10 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 					 *
 					 */
 					$id = MifistGuestBookSubMenuModel::insert(array(
+						/*'user_category' =>  $_POST['user_category'],*/
 						'user_name' => $_POST['user_name'],
+						'age' => $_POST['age'],
+						'user_mail' => $_POST['user_mail'],
 						'date_add' => time(), // time() стандартная php функция получения времени
 						'message' => $_POST['message']
 					));
@@ -103,8 +106,11 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 					// Если данные есть то обновляем их в базе данных по ID
 					MifistGuestBookSubMenuModel::updateById(
 						array(
+							/*'user_category' =>  $_POST['user_category'],*/
 							'user_name' => $_POST['user_name'],
-							'date_add' => time(),
+							'age' => $_POST['age'],
+							'user_mail' => $_POST['user_mail'],
+							'date_add' => time(), // time() стандартная php функция получения времени
 							'message' => $_POST['message']
 						), $_POST['id']
 					);

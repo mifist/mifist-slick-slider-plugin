@@ -4,6 +4,7 @@ namespace includes\controllers\site\shortcodes;
 // Наследуем базовый класс MifistShortcodesController в котором реализованый некоторый функционал для создания
 // шорткода
 use includes\controllers\admin\menu\MifistICreatorInstance;
+
 class MifistGuestBookShortcodesController extends MifistShortcodesController
     implements MifistICreatorInstance
 {
@@ -57,10 +58,19 @@ class MifistGuestBookShortcodesController extends MifistShortcodesController
     {
         // TODO: Implement render() method.
         // В этой переменой будет view формы
-       
-	
-	    $pathView = MIFISTSLICK_PlUGIN_DIR . '/includes/views/admin/menu/MifistGuestBookShortcodesController.view.php';
-	    $this->loadView($pathView);
+        $output = '';
+        $output .= '<form class="mifist-guest-form" method="post">
+    <label>'.__('User name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</label>
+    <input type="text" name="mifist_user_name" class="mifist-user-name">
+     <label>'.__('User age', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</label>
+    <input type="text" name="mifist_age" class="mifist-age">
+     <label>'.__('User e-mail', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</label>
+    <input type="email" name="mifist_user_mail" class="mifist-user-mail">
+    <label>'.__('Message', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</label>
+    <textarea name="mifist_message" class="mifist-message"></textarea>
+    <button class="mifist-btn-add" >'.__('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</button>                   
+</form>';
+        return $output;
     }
 
     // Метод создает экземпляр класса
