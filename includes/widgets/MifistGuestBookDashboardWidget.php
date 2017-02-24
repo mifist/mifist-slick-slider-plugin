@@ -1,18 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: romansolomashenko
- * Date: 21.02.17
- * Time: 4:55 PM
- */
-
 namespace includes\widgets;
 
 
-use includes\controllers\admin\menu\StepByStepICreatorInstance;
-use includes\models\admin\menu\StepByStepGuestBookSubMenuModel;
+use includes\controllers\admin\menu\MifistICreatorInstance;
+use includes\models\admin\menu\MifistGuestBookSubMenuModel;
 
-class StepByStepGuestBookDashboardWidget implements StepByStepICreatorInstance
+class MifistGuestBookDashboardWidget implements MifistICreatorInstance
 {
     public function __construct() {
         // Регистрация виджета консоли
@@ -34,8 +27,8 @@ class StepByStepGuestBookDashboardWidget implements StepByStepICreatorInstance
 
         // Продвинутое использование: добавление виджета в боковой столбец
         add_meta_box(
-            'step_by_step_guest_book_dashboard_widget_new',
-            __('Guest book new', STEPBYSTEP_PlUGIN_TEXTDOMAIN),
+            'mifist_guest_book_dashboard_widget_new',
+            __('Guest book new', MIFISTSLICK_PlUGIN_TEXTDOMAIN),
             array( &$this, 'renderDashboardWidget' ),
             'dashboard',
             'side',
@@ -43,8 +36,8 @@ class StepByStepGuestBookDashboardWidget implements StepByStepICreatorInstance
         );
 
         wp_add_dashboard_widget(
-            'step_by_step_guest_book_dashboard_widget',         // Идентификатор виджета.
-            __('Guest book', STEPBYSTEP_PlUGIN_TEXTDOMAIN),           // Заголовок виджета.
+            'mifist_guest_book_dashboard_widget',         // Идентификатор виджета.
+            __('Guest book', MIFISTSLICK_PlUGIN_TEXTDOMAIN),           // Заголовок виджета.
             array( &$this, 'renderDashboardWidget'  ) // Функция отображения.
         );
 
@@ -56,8 +49,8 @@ class StepByStepGuestBookDashboardWidget implements StepByStepICreatorInstance
         $normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
 
         // Сохраняем старую версию массива и удаляем наш виджет из конца массива
-        $example_widget_backup = array('step_by_step_guest_book_dashboard_widget' => $normal_dashboard['step_by_step_guest_book_dashboard_widget']);
-        unset($normal_dashboard['step_by_step_guest_book_dashboard_widget']);
+        $example_widget_backup = array('mifist_guest_book_dashboard_widget' => $normal_dashboard['mifist_guest_book_dashboard_widget']);
+        unset($normal_dashboard['mifist_guest_book_dashboard_widget']);
 
         // Объединяем два массива вместе таким образом, что наш виджет оказывается в начале
         $sorted_dashboard = array_merge($example_widget_backup, $normal_dashboard);
@@ -70,20 +63,20 @@ class StepByStepGuestBookDashboardWidget implements StepByStepICreatorInstance
     // Выводит контент
     public function renderDashboardWidget(){
         // Запрашиваем данные из таблицы
-        $data = StepByStepGuestBookSubMenuModel::getAll();
+        $data = MifistGuestBookSubMenuModel::getAll();
         // Вывод данных
         ?>
         <table  border="1">
             <thead>
             <tr>
                 <td>
-                    <?php _e('Name', STEPBYSTEP_PlUGIN_TEXTDOMAIN ); ?>
+                    <?php _e('Name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                 </td>
                 <td>
-                    <?php _e('Messsage', STEPBYSTEP_PlUGIN_TEXTDOMAIN ); ?>
+                    <?php _e('Messsage', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                 </td>
                 <td>
-                    <?php _e('Date', STEPBYSTEP_PlUGIN_TEXTDOMAIN ); ?>
+                    <?php _e('Date', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                 </td>
 
             </tr>

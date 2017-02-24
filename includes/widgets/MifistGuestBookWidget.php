@@ -1,17 +1,9 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: romansolomashenko
- * Date: 21.02.17
- * Time: 3:59 PM
- */
-
 namespace includes\widgets;
 
-use includes\models\admin\menu\StepByStepGuestBookSubMenuModel;
+use includes\models\admin\menu\MifistGuestBookSubMenuModel;
 
-class StepByStepGuestBookWidget extends \WP_Widget
+class MifistGuestBookWidget extends \WP_Widget
 {
     public function __construct() {
 
@@ -28,8 +20,8 @@ class StepByStepGuestBookWidget extends \WP_Widget
          */
 
         parent::__construct(
-            "step_by_step_guest_book",
-            "Step by Stepe Guest Book Widget",
+            "mifist_guest_book",
+            "Mifist Guest Book Widget",
             array("description" => "Guest book")
         );
     }
@@ -85,19 +77,19 @@ class StepByStepGuestBookWidget extends \WP_Widget
         echo "<p>$text</p>";
 
         // Вывод таблички гостевой книги
-        $data = StepByStepGuestBookSubMenuModel::getAll();
+        $data = MifistGuestBookSubMenuModel::getAll();
         ?>
         <table  border="1">
             <thead>
             <tr>
                 <td>
-                    <?php _e('Name', STEPBYSTEP_PlUGIN_TEXTDOMAIN ); ?>
+                    <?php _e('Name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                 </td>
                 <td>
-                    <?php _e('Messsage', STEPBYSTEP_PlUGIN_TEXTDOMAIN ); ?>
+                    <?php _e('Messsage', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                 </td>
                 <td>
-                    <?php _e('Date', STEPBYSTEP_PlUGIN_TEXTDOMAIN ); ?>
+                    <?php _e('Date', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
                 </td>
 
             </tr>
