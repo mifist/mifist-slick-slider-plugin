@@ -11,7 +11,7 @@
 		<?php /*echo $data['user_category']; */?>
 	</select>-->
 	<input type="text" name="user_name" value="<?php echo $data['user_name']; ?>">
-	<input type="text" name="age" value="<?php echo $data['age']; ?>">
+	<input type="number" name="age" value="<?php echo $data['age']; ?>">
 	<input type="email" name="user_mail" value="<?php echo $data['user_mail']; ?>">
 	<textarea name="message">
 		<?php echo $data['message']; ?>
