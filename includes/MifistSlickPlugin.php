@@ -6,7 +6,7 @@ namespace includes;
 use includes\common\MifistDefaultOption;
 use includes\common\MifistLoader;
 use includes\common\GetInstance;
-
+use includes\models\admin\menu\MifistGuestBookSubMenuModel;
 
 class MifistSlickPlugin {
 	use GetInstance;
@@ -29,8 +29,10 @@ class MifistSlickPlugin {
 	
     static public function activation()
     {
-        // debug.log
-        error_log('plugin '.MIFISTSLICK_PlUGIN_NAME.' activation');
+	    // debug.log
+	    error_log('plugin '.STEPBYSTEP_PlUGIN_NAME.' activation');
+	    //Создание таблицы Гостевой книги
+	    MifistGuestBookSubMenuModel::createTable();
 	    
 	    
     }
