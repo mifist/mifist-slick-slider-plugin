@@ -17,8 +17,8 @@ echo '<div class="small-12 medium-12 large-6 columns">
 		</h3>
 			<h4>'. _x("Features of Slick Slider", MIFISTSLICK_PlUGIN_TEXTDOMAIN) .'</h4>
 			<p>Для проверки шорткодов:<br />
-			Ajax shortcode - [mifist_ajax_guest_book]<br />
-			Guest Book shortcode - [mifist_guest_book]<br />
+			Ajax shortcode - [mifist_guest_book]<br />
+			Guest Book shortcode - [mifist_show_guest_book]<br />
 			</p>
 <ul class="features">
  	<li>'. _x("Fully responsive. Scales with its container.", MIFISTSLICK_PlUGIN_TEXTDOMAIN) .'</li>

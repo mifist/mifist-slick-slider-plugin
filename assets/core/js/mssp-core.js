@@ -7,14 +7,18 @@ jQuery(function($) {
 	});
 	// Отслежываем нажатие  на кнопку Add (<button class="mifist-ajax-btn-add" >'.__('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</button> )
 	$(document).find('.mifist-ajax-btn-add').click(function (e) {
-		var userName, userMessage, data;
+		var userName, userAge, userMail, userMessage, data;
 		// Получаем данные формы
 		userName = $(this).parent().find('.mifist-user-name').val();
+		userAge = $(this).parent().find('.mifist-age').val();
+		userMail = $(this).parent().find('.mifist-user-mail').val();
 		userMessage = $(this).parent().find('.mifist-message').val();
 		// Формируем обьект данных который получит AJAX  обработчик
 		data = {
 			action: 'guest_book',
 			user_name: userName,
+			age: userAge,
+			user_mail: userMail,
 			message: userMessage
 		}
 		// Вывод данных в консоль браузера
