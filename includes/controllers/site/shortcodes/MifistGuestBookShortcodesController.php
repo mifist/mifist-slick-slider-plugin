@@ -1,20 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: romansolomashenko
- * Date: 21.02.17
- * Time: 2:03 PM
- * Класс контроллер для шорткода формы гостевой книги
- */
-
 namespace includes\controllers\site\shortcodes;
 
-// Наследуем базовый класс StepByStepShortcodesController в котором реализованый некоторый функционал для создания
+// Наследуем базовый класс MifistShortcodesController в котором реализованый некоторый функционал для создания
 // шорткода
-use includes\controllers\admin\menu\StepByStepICreatorInstance;
+use includes\controllers\admin\menu\MifistICreatorInstance;
 
-class StepByStepGuestBookShortcodesController extends StepByStepShortcodesController
-    implements StepByStepICreatorInstance
+class MifistGuestBookShortcodesController extends MifistShortcodesController
+    implements MifistICreatorInstance
 {
 
     /**
@@ -25,10 +17,10 @@ class StepByStepGuestBookShortcodesController extends StepByStepShortcodesContro
     {
         // TODO: Implement initShortcode() method.
         /*
-         * Добавляем щорткод [step_by_step_guest_book]
+         * Добавляем щорткод [mifist_guest_book]
          * этот шорткод будет добалять форму для добавления данных в гостевую книгу
          */
-        add_shortcode( 'step_by_step_guest_book', array(&$this, 'action'));
+        add_shortcode( 'mifist_guest_book', array(&$this, 'action'));
     }
 
     /**
@@ -68,11 +60,11 @@ class StepByStepGuestBookShortcodesController extends StepByStepShortcodesContro
         // В этой переменой будет view формы
         $output = '';
         $output .= '<form  method="post">
-                        <label>'.__('User name', STEPBYSTEP_PlUGIN_TEXTDOMAIN ).'</label>
-                        <input type="text" name="step_user_name" class="step-user-name">
-                        <label>'.__('Message', STEPBYSTEP_PlUGIN_TEXTDOMAIN ).'</label>
-                        <textarea name="step_message" class="step-message"></textarea>
-                        <button class="step-by-steb-btn-add" >'.__('Add', STEPBYSTEP_PlUGIN_TEXTDOMAIN ).'</button>                   
+                        <label>'.__('User name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</label>
+                        <input type="text" name="mifist_user_name" class="mifist-user-name">
+                        <label>'.__('Message', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</label>
+                        <textarea name="mifist_message" class="mifist-message"></textarea>
+                        <button class="mifist-btn-add" >'.__('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</button>                   
                     </form>';
         return $output;
     }
