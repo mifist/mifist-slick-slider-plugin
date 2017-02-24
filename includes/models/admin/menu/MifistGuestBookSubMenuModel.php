@@ -28,6 +28,7 @@ class MifistGuestBookSubMenuModel
                               id int(11) NOT NULL AUTO_INCREMENT,
                               date_add int(11) NOT NULL,
                               user_name varchar(255) NOT NULL,
+                              user_mail text NOT NULL,
                               message text NOT NULL,
                               PRIMARY KEY (id)
                             ) CHARACTER SET utf8 COLLATE utf8_general_ci;";
@@ -45,7 +46,9 @@ class MifistGuestBookSubMenuModel
 	 */
 	static public function getById($id){
 		global $wpdb;
-		$data = $wpdb->get_row("SELECT * FROM ".self::getTableName()." WHERE id= ". $id, ARRAY_A);
+		$data2 = $wpdb->get_row("SELECT * FROM ".self::getTableName()." WHERE id= ". $id, ARRAY_A);
+		// очистка переменной $data от SQL инъекций используя esc_sql
+		$data = esc_sql($data2);
 		if(count($data) > 0) return $data;
 		return false;
 	}
