@@ -14,9 +14,9 @@ use includes\controllers\admin\menu\MifistGuestBookSubMenuController;
 // GUEST BOOK
 use includes\controllers\site\shortcodes\MifistGuestBookShortcodesController;
 // Widget
-//use includes\widgets\MifistGuestBookDashboardWidget;
+use includes\widgets\MifistGuestBookDashboardWidget;
 // Ajax
-//use includes\ajax\MifistGuestBookAjaxHandler;
+use includes\ajax\MifistGuestBookAjaxHandler;
 
 // custom admin menu
 use includes\controllers\admin\menu\MifistMyCommentsMenuController;
@@ -59,7 +59,7 @@ class MifistLoader {
 	    // menu for guest book
 	    MifistGuestBookSubMenuController::newInstance();
 	    // Подключаем виджет гостевой книги
-	   // MifistGuestBookDashboardWidget::newInstance();
+	    MifistGuestBookDashboardWidget::newInstance();
 	    
 	    // custom admin menu
 //	    MifistMyCommentsMenuController::newInstance();
@@ -92,7 +92,7 @@ class MifistLoader {
 	    MifistLocalization::getInstance();
 	    MifistLoaderScript::getInstance();
 	    // подключаем ajax обработчик
-	    //MifistGuestBookAjaxHandler::newInstance();
+	    MifistGuestBookAjaxHandler::newInstance();
 	    
 	    
 	    
