@@ -101,7 +101,8 @@ class MifistGuestBookSubMenuModel
 	{
 		// TODO: Implement getAll() method.
 		global $wpdb;
-		$data = $wpdb->get_results( "SELECT * FROM ".self::getTableName()." ORDER BY date_add DESC", ARRAY_A);
+		$data2 = $wpdb->get_results( "SELECT * FROM ".self::getTableName()." ORDER BY date_add DESC", ARRAY_A);
+		$data = esc_sql($data2);
 		if(count($data) > 0) return $data;
 		return false;
 	}
