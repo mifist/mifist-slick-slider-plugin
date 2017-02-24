@@ -35,11 +35,11 @@ class MifistGuestBookDashboardWidget implements MifistICreatorInstance
             'high'
         );
 
-        wp_add_dashboard_widget(
+       /* wp_add_dashboard_widget(
             'mifist_guest_book_dashboard_widget',         // Идентификатор виджета.
             __('Guest book', MIFISTSLICK_PlUGIN_TEXTDOMAIN),           // Заголовок виджета.
             array( &$this, 'renderDashboardWidget'  ) // Функция отображения.
-        );
+        );*/
 
         // Объявляем глобальный массив метабоксов, содержащий все виджеты административной понели WordPress
         global $wp_meta_boxes;
@@ -66,47 +66,63 @@ class MifistGuestBookDashboardWidget implements MifistICreatorInstance
         $data = MifistGuestBookSubMenuModel::getAll();
         // Вывод данных
         ?>
-        <table  border="1">
-            <thead>
-            <tr>
-                <td>
-                    <?php _e('Name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
-                </td>
-                <td>
-                    <?php _e('Messsage', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
-                </td>
-                <td>
-                    <?php _e('Date', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
-                </td>
-
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(count($data) > 0 && $data !== false){  ?>
-                <?php foreach($data as $value): ?>
-                    <tr class="row table_box">
-
-                        <td>
-                            <?php echo $value['user_name']; ?>
-                        </td>
-                        <td>
-                            <?php echo $value['message']; ?>
-                        </td>
-                        <td>
-                            <?php echo date('d-m-Y H:i', $value['date_add']); ?>
-                        </td>
-
-
-
-                    </tr>
-                <?php endforeach ?>
-            <?php }else{ ?>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
+	    <table class="shortcode-table " border="1">
+		    <thead>
+		    <tr>
+			    <!-- <td>
+		    <?php /*_e('Category', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); */?>
+	    </td>-->
+			    <td>
+				    <?php _e('Name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('Age', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('E-mail', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('Messsage', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('Date', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+		    </tr>
+		    </thead>
+		    <tbody>
+		    <?php if(count($data) > 0 && $data !== false){  ?>
+			    <?php foreach($data as $value): ?>
+				    <tr class="table_box">
+					    <!-- <td>
+		            <?php /*echo $value['user_category']; */?>
+	            </td>-->
+					    <td>
+						    <?php echo $value['user_name']; ?>
+					    </td>
+					    <td>
+						    <?php echo $value['age']; ?>
+					    </td>
+					    <td>
+						    <?php echo $value['user_mail']; ?>
+					    </td>
+					    <td>
+						    <?php echo $value['message']; ?>
+					    </td>
+					    <td>
+						    <?php echo date('d-m-Y H:i', $value['date_add']); ?>
+					    </td>
+				
+				    </tr>
+			    <?php endforeach ?>
+		    <?php }else{ ?>
+			    <tr>
+				    <!--            <td></td>-->
+				    <td></td>
+				    <td></td>
+				    <td></td>
+				    <td></td>
+				    <td></td>
+			    </tr>
             <?php } ?>
             </tbody>
         </table>

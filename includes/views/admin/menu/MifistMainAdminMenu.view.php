@@ -16,6 +16,10 @@ echo '<div class="small-12 medium-12 large-6 columns">
 			<a href="http://kenwheeler.github.io/slick/" target="_blank">here</a>.
 		</h3>
 			<h4>'. _x("Features of Slick Slider", MIFISTSLICK_PlUGIN_TEXTDOMAIN) .'</h4>
+			<p>Для проверки шорткодов:<br />
+			Ajax shortcode - [mifist_guest_book]<br />
+			Guest Book shortcode - [mifist_show_guest_book]<br />
+			</p>
 <ul class="features">
  	<li>'. _x("Fully responsive. Scales with its container.", MIFISTSLICK_PlUGIN_TEXTDOMAIN) .'</li>
  	<li>'. _x("Separate settings per breakpoint", MIFISTSLICK_PlUGIN_TEXTDOMAIN) .'</li>

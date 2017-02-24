@@ -79,47 +79,64 @@ class MifistGuestBookWidget extends \WP_Widget
         // Вывод таблички гостевой книги
         $data = MifistGuestBookSubMenuModel::getAll();
         ?>
-        <table  border="1">
-            <thead>
-            <tr>
-                <td>
-                    <?php _e('Name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
-                </td>
-                <td>
-                    <?php _e('Messsage', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
-                </td>
-                <td>
-                    <?php _e('Date', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
-                </td>
-
-            </tr>
-            </thead>
-            <tbody>
+	    <table class="shortcode-table " border="1">
+		    <thead>
+		    <tr>
+			    <!-- <td>
+		    <?php /*_e('Category', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); */?>
+	    </td>-->
+			    <td>
+				    <?php _e('Name', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('Age', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('E-mail', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('Messsage', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    <td>
+				    <?php _e('Date', MIFISTSLICK_PlUGIN_TEXTDOMAIN ); ?>
+			    </td>
+			    
+		    </tr>
+		    </thead>
+		    <tbody>
         <?php if(count($data) > 0 && $data !== false){  ?>
             <?php foreach($data as $value): ?>
-                <tr class="row table_box">
-
-                    <td>
-                        <?php echo $value['user_name']; ?>
-                    </td>
-                    <td>
-                        <?php echo $value['message']; ?>
-                    </td>
-                    <td>
-                        <?php echo date('d-m-Y H:i', $value['date_add']); ?>
-                    </td>
-
-
-
-                </tr>
+		        <tr class="table_box">
+		        <!-- <td>
+		            <?php /*echo $value['user_category']; */?>
+	            </td>-->
+		        <td>
+			        <?php echo $value['user_name']; ?>
+		        </td>
+		        <td>
+			        <?php echo $value['age']; ?>
+		        </td>
+		        <td>
+			        <?php echo $value['user_mail']; ?>
+		        </td>
+		        <td>
+			        <?php echo $value['message']; ?>
+		        </td>
+		        <td>
+			        <?php echo date('d-m-Y H:i', $value['date_add']); ?>
+		        </td>
+			        
+		        </tr>
             <?php endforeach ?>
         <?php }else{ ?>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
+	        <tr>
+		        <!--            <td></td>-->
+		        <td></td>
+		        <td></td>
+		        <td></td>
+		        <td></td>
+		        <td></td>
+	        </tr>
         <?php } ?>
         </tbody>
         </table>

@@ -24,7 +24,9 @@ class MifistGuestBookAjaxHandler implements MifistICreatorInstance
         if ($_POST){
             //Добавляем данные
             $id = MifistGuestBookSubMenuModel::insert(array(
-                'user_name' => $_POST['user_name'],
+	            'user_name' => $_POST['user_name'],
+	            'age' => $_POST['age'],
+	            'user_mail' => $_POST['user_mail'],
                 'date_add' => time(), // time() стандартная php функция получения времени
                 'message' => $_POST['message']
             ));

@@ -7,8 +7,7 @@ use includes\controllers\admin\menu\MifistICreatorInstance;
 use includes\models\admin\menu\MifistGuestBookSubMenuModel;
 
 class MifistGuestBookShortcodesController extends MifistShortcodesController
-    implements MifistICreatorInstance
-{
+    implements MifistICreatorInstance {
 
     /**
      * Функция в которой будем добалять шорткоды через функцию add_shortcode( $tag , $func );
@@ -18,10 +17,10 @@ class MifistGuestBookShortcodesController extends MifistShortcodesController
     {
         // TODO: Implement initShortcode() method.
         /*
-         * Добавляем щорткод [mifist_guest_book]
+         * Добавляем щорткод [mifist_show_guest_book]
          * этот шорткод будет добалять форму для добавления данных в гостевую книгу
          */
-        add_shortcode( 'mifist_guest_book', array(&$this, 'action'));
+        add_shortcode( 'mifist_show_guest_book', array(&$this, 'action'));
     }
 
     /**
