@@ -20,13 +20,13 @@ jQuery(function($) {
 			age: userAge,
 			user_mail: userMail,
 			message: userMessage
-		}
+		} ;
 		// Вывод данных в консоль браузера
 		console.log(data);
-		console.log(ajaxurl+ '?action=guest_book');
+	//	console.log(ajaxurl+ '?action=guest_book');
 		
 		// Отправка данных ajax обработчику (wp_ajax_guest_book, wp_ajax_nopriv_guest_book)
-		$.post( ajaxurl, data, function(response) {
+		$.post( mifist_slick_slider_plugin_ajax.ajaxurl, data, function(response) {
 			alert('Получено с сервера: ' + response.data.message);
 			console.log(response);
 		});

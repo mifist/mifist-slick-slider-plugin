@@ -9,8 +9,6 @@
 namespace includes\common;
 
 class MifistLoaderScript {
-	use GetInstance;
-
 	private function __construct(){
 		// Проверяем в админке мы или нет
 		if ( is_admin() ) {
@@ -23,6 +21,8 @@ class MifistLoaderScript {
 		}
 		
 	}
+	
+	use GetInstance;
 	
 	public function loadScriptAdmin($hook){
 	// SCRIPT
@@ -55,16 +55,16 @@ class MifistLoaderScript {
 	
 	
 	public function loadHeadScriptAdmin(){
+
 		?>
 		<script type="text/javascript">
-			var mifistSlickAjaxUrl;
-			mifistSlickAjaxUrl  = '<?php echo MIFISTSLICK_PlUGIN_AJAX_URL; ?>';
+			var stepByStepAjaxUrl;
+			stepByStepAjaxUrl  = '<?php echo STEPBYSTEP_PlUGIN_AJAX_URL; ?>';
 		</script>
 		<?php
-	
 	}
 	public function loadScriptSite($hook){
-	// SCRIPT
+		// SCRIPT
 		wp_register_script(
 			MIFISTSLICK_PlUGIN_SLUG.'-core-js', //$handle
 			MIFISTSLICK_PlUGIN_URL.'assets/core/js/mssp-core.js', //$src
@@ -75,7 +75,13 @@ class MifistLoaderScript {
 			true //$$in_footer
 		);
 		wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-core-js');
-		
+		$ajaxsome = array( 'ajaxurl' => MIFISTSLICK_PlUGIN_AJAX_URL);
+		wp_localize_script(
+			MIFISTSLICK_PlUGIN_SLUG.'-core-js', //$handle,
+			MIFISTSLICK_PlUGIN_SLUG.'_ajax',
+			$ajaxsome
+		);
+
 		wp_register_script(
 			MIFISTSLICK_PlUGIN_SLUG.'-slick-js', //$handle
 			MIFISTSLICK_PlUGIN_URL.'assets/core/js/slick.min.js', //$src
@@ -89,11 +95,6 @@ class MifistLoaderScript {
 		
 	}
 	public function loadHeadScriptSite(){
-
-		
-	}
-	public function loadFooterScriptSite(){
-
 		// STYLE
 		wp_register_style(
 			MIFISTSLICK_PlUGIN_SLUG.'-core', // handle
@@ -103,6 +104,11 @@ class MifistLoaderScript {
 		//'all' // $media (all|screen|handheld|print)
 		);
 		wp_enqueue_style(MIFISTSLICK_PlUGIN_SLUG.'-core');
+		
+	}
+	public function loadFooterScriptSite(){
+
+
 	}
 
 }

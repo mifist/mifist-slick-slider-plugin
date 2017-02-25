@@ -8,6 +8,7 @@ define("MIFISTSLICK_PlUGIN_TEXTDOMAIN", str_replace( '_', '-', MIFISTSLICK_PlUGI
 define("MIFISTSLICK_PlUGIN_OPTION_VERSION", MIFISTSLICK_PlUGIN_SLUG.'_version');
 define("MIFISTSLICK_PlUGIN_OPTION_NAME", MIFISTSLICK_PlUGIN_SLUG.'_options');
 define("MIFISTSLICK_PlUGIN_AJAX_URL", admin_url('admin-ajax.php'));
+//define("MIFISTSLICK_PlUGIN_AJAX_URL_NEW", str_replace( '\/', '/', MIFISTSLICK_PlUGIN_AJAX_URL ));
 
 // Проверим зарегистрирована ли функция get_plugins(). Это нужно для фронт-энда
 // обычно get_plugins() работает только в админ-панели.
