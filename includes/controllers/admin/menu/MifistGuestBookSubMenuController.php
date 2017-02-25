@@ -50,8 +50,6 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 
 				$pathView .= "/includes/views/admin/menu/MifistGuestBookSubMenuAdd.view.php";
 
-				$pathView .= "/includes/views/admin/menu/MifistGuestBookShortcodesAdd.view.php";
-
 				$this->loadView($pathView, 0, $data);
 				break;
 			// Сохранение данных в таблицу
@@ -97,8 +95,7 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 					$data = MifistGuestBookSubMenuModel::getById((int)$_GET['id']);
 
 					$pathView .= "/includes/views/admin/menu/MifistGuestBookSubMenuEdit.view.php";
-
-					$pathView .= "/includes/views/admin/menu/MifistGuestBookShortcodesEdit.view.php";
+					
 
 					$this->loadView($pathView, 0, $data);
 				}
