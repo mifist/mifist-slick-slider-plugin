@@ -7,12 +7,12 @@ use includes\controllers\admin\menu\MifistICreatorInstance;
 use includes\models\site\MifistTextShortcodeModel;
 
 class MifistTextShortcodeController extends MifistShortcodesController
-	implements MifistICreatorInstance
-{
-	//public $model;
+	implements MifistICreatorInstance {
+	
+	public $model;
 	public function __construct() {
 		parent::__construct();
-		//$this->model = MifistTextShortcodeModel::newInstance();
+		$this->model = MifistTextShortcodeModel::newInstance();
 	}
 	/**
 	 * Функция в которой будем добалять шорткоды через функцию add_shortcode( $tag , $func );
@@ -54,12 +54,10 @@ class MifistTextShortcodeController extends MifistShortcodesController
 		 * Объединяет атрибуты (параметры) шоткода с известными атрибутами, остаются только известные
 		 * атрибуты. Устанавливает значения атрибута по умолчанию, если он не указан.
 		 */
-		$atts = shortcode_atts( array(
-			'content' => ''
-		), $atts, $tag );
-		$reuestAPI = MifistRequestApi::getInstance();
-		$data = $reuestAPI-> getReadMeSlick();
-		//$data = $this->model->getData($atts['content']);
+		
+		
+		
+		$data = $this->model->getData();
 		if ($data == false) return false;
 		return $this->render($data);
 	}
@@ -71,12 +69,12 @@ class MifistTextShortcodeController extends MifistShortcodesController
 	 */
 	public function render($data)
 	{
+		
 		// TODO: Implement render() method.
-		var_dump('<pre>', $data, '</pre>');
+		//var_dump('<pre>', $data, '</pre>');
+		echo '<p><code>' . base64_decode($data) . '</code></p>';
 	}
-	
-	public static function newInstance()
-	{
+	public static function newInstance() {
 		// TODO: Implement newInstance() method.
 		$instance = new self;
 		return $instance;

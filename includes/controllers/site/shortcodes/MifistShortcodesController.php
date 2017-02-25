@@ -41,4 +41,28 @@ abstract class MifistShortcodesController {
      * @return mixed
      */
     abstract public function render($data);
+    
+	/**
+	 * Метод подключения view
+	 * @param $view
+	 * @param int $type
+	 * @param array $data
+	 */
+	protected function loadView($view, $type = 0, $data = array()){
+		if (file_exists($view)) {
+			switch($type){
+				case 0:
+					require_once $view;
+					break;
+				case 1:
+					require $view;
+					break;
+				default:
+					require_once $view;
+					break;
+			}
+		} else {
+			wp_die(sprintf(__('(View %s not found)', MIFISTSLICK_PlUGIN_TEXTDOMAIN), $view));
+		}
+	}
 }

@@ -32,6 +32,9 @@ require_once MIFISTSLICK_PlUGIN_DIR . '/includes/common/MifistAutoload.php';
 require_once MIFISTSLICK_PlUGIN_DIR . '/includes/MifistSlickPlugin.php';
 
 
+//Регистрация виджета
+add_action('widgets_init', create_function('', 'return register_widget("includes\widgets\MifistGuestBookWidget");'));
+
 // вызов функций активации и деактивации плагина
 register_activation_hook( __FILE__, array('includes\MifistSlickPlugin' ,  'activation' ) );
 register_deactivation_hook( __FILE__, array('includes\MifistSlickPlugin' ,  'deactivation' ) );
