@@ -47,11 +47,11 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 			// Подгружаем view для добавление данных в таблицу
 			// admin.php?page=mifist_control_guest_book_menu&action=add_data
 			case "add_data":
-<<<<<<< HEAD
+
 				$pathView .= "/includes/views/admin/menu/MifistGuestBookSubMenuAdd.view.php";
-=======
+
 				$pathView .= "/includes/views/admin/menu/MifistGuestBookShortcodesAdd.view.php";
->>>>>>> 22e202280a0f34585a49839269e2e1070f5f1cb0
+
 				$this->loadView($pathView, 0, $data);
 				break;
 			// Сохранение данных в таблицу
@@ -95,11 +95,11 @@ class MifistGuestBookSubMenuController extends MifistBaseAdminMenuController {
 				if(isset($_GET['id']) && !empty($_GET['id'])){
 					// Получаем данные записи в таблице по id затем эти данные передадим в view MifistGuestBookSubMenuEdit.view
 					$data = MifistGuestBookSubMenuModel::getById((int)$_GET['id']);
-<<<<<<< HEAD
+
 					$pathView .= "/includes/views/admin/menu/MifistGuestBookSubMenuEdit.view.php";
-=======
+
 					$pathView .= "/includes/views/admin/menu/MifistGuestBookShortcodesEdit.view.php";
->>>>>>> 22e202280a0f34585a49839269e2e1070f5f1cb0
+
 					$this->loadView($pathView, 0, $data);
 				}
 				
