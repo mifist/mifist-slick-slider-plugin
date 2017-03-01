@@ -76,6 +76,12 @@ class MifistLoaderScript {
 		);
 		wp_enqueue_script(MIFISTSLICK_PlUGIN_SLUG.'-core-js');
 		
+		$ajaxsome = array( 'ajaxurl' => MIFISTSLICK_PlUGIN_AJAX_URL);
+		wp_localize_script(
+			MIFISTSLICK_PlUGIN_SLUG.'-core-js', //$handle,
+			MIFISTSLICK_PlUGIN_SLUG.'_ajax',
+			$ajaxsome
+		);
 		wp_register_script(
 			MIFISTSLICK_PlUGIN_SLUG.'-slick-js', //$handle
 			MIFISTSLICK_PlUGIN_URL.'assets/core/js/slick.min.js', //$src

@@ -177,4 +177,8 @@ table.admin-table {
   width: 100%;
 }
 
+.wp-editor-container textarea.wp-editor-area {
+  width: auto !important;
+}
+
 /*# sourceMappingURL=mssp-admin-main.css.map */

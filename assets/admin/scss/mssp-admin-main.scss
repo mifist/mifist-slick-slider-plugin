@@ -20,4 +20,7 @@ $f-open: 'Open Sans', sans-serif;
 table.admin-table {
   width: 100%;
 }
+.wp-editor-container textarea.wp-editor-area {
+  width: auto !important;
+}
 

@@ -49,7 +49,8 @@ class MifistGuestBookDashboardWidget implements MifistICreatorInstance
         $normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
 
         // Сохраняем старую версию массива и удаляем наш виджет из конца массива
-        $example_widget_backup = array('mifist_guest_book_dashboard_widget' => $normal_dashboard['mifist_guest_book_dashboard_widget']);
+        $example_widget_backup = array(
+        		'mifist_guest_book_dashboard_widget_new' => $normal_dashboard['mifist_guest_book_dashboard_widget']);
         unset($normal_dashboard['mifist_guest_book_dashboard_widget']);
 
         // Объединяем два массива вместе таким образом, что наш виджет оказывается в начале

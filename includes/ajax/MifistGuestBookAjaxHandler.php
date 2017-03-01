@@ -4,8 +4,7 @@ namespace includes\ajax;
 use includes\controllers\admin\menu\MifistICreatorInstance;
 use includes\models\admin\menu\MifistGuestBookSubMenuModel;
 
-class MifistGuestBookAjaxHandler implements MifistICreatorInstance
-{
+class MifistGuestBookAjaxHandler implements MifistICreatorInstance {
     public function __construct(){
         if( defined('DOING_AJAX') && DOING_AJAX ){
             add_action('wp_ajax_guest_book', array( &$this, 'ajaxHandler'));

@@ -6,6 +6,7 @@ namespace includes;
 use includes\common\MifistDefaultOption;
 use includes\common\MifistLoader;
 use includes\common\GetInstance;
+use includes\custom_post_type\PortfolioPostType;
 use includes\models\admin\menu\MifistGuestBookSubMenuModel;
 
 class MifistSlickPlugin {
@@ -13,6 +14,11 @@ class MifistSlickPlugin {
     private function __construct() {
         MifistLoader::getInstance();
 	    add_action('plugins_loaded', array(&$this, 'setDefaultOptions'));
+	
+	    // Создаем Custom Post Type Slider
+	    new PortfolioPostType();
+	    
+	    
     }
 	
 	/**
@@ -43,6 +49,8 @@ class MifistSlickPlugin {
         error_log('plugin '.MIFISTSLICK_PlUGIN_NAME.' deactivation');
 	    delete_option(MIFISTSLICK_PlUGIN_OPTION_NAME);
 	    delete_option(MIFISTSLICK_PlUGIN_OPTION_VERSION);
+	    MifistGuestBookSubMenuModel::deleteTable();
+	    error_log('plugin '.MIFISTSLICK_PlUGIN_NAME.' delete Table');
     }
 
 }
